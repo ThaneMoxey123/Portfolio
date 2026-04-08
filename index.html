@@ -21,8 +21,14 @@
       --sans:      'Syne', sans-serif;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ── JAPANESE RED THEME */
+    body.lang-jp {
+      --accent:  #cc0000;
+      --accent2: #990000;
+      --accent3: #ff3333;
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     body {
@@ -33,7 +39,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NOISE OVERLAY */
     body::before {
       content: '';
       position: fixed;
@@ -43,12 +48,10 @@
       opacity: 0.4;
     }
 
-    /* ── SCROLLBAR */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
-    /* ── NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -62,20 +65,10 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-logo {
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      color: var(--accent3);
-      letter-spacing: 0.05em;
-    }
-
+    .nav-logo { font-family: var(--mono); font-size: 0.85rem; color: var(--accent3); letter-spacing: 0.05em; }
     .nav-logo span { color: var(--text-dim); }
 
-    nav ul {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+    nav ul { display: flex; gap: 2rem; list-style: none; }
 
     nav ul a {
       font-family: var(--mono);
@@ -88,17 +81,31 @@
       position: relative;
     }
 
-    nav ul a::before {
-      content: '// ';
-      color: var(--accent);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
+    nav ul a::before { content: '// '; color: var(--accent); opacity: 0; transition: opacity 0.2s; }
     nav ul a:hover { color: var(--text); }
     nav ul a:hover::before { opacity: 1; }
 
-    /* ── HERO */
+    /* ── LANG TOGGLE */
+    .lang-toggle {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      padding: 0.4rem 0.9rem;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lang-toggle:hover { background: var(--accent); color: #0a0a0a; }
+    .lang-toggle .flag { font-size: 1rem; line-height: 1; }
+
     #hero {
       min-height: 100vh;
       display: flex;
@@ -110,642 +117,168 @@
     }
 
     .hero-grid-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      position: absolute; inset: 0;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
       background-size: 40px 40px;
       mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
       opacity: 0.4;
     }
 
     .hero-glow {
-      position: absolute;
-      width: 600px; height: 600px;
+      position: absolute; width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(255,107,26,0.12) 0%, transparent 70%);
-      top: 10%; left: -5%;
-      pointer-events: none;
+      top: 10%; left: -5%; pointer-events: none; transition: background 0.5s;
     }
+    body.lang-jp .hero-glow { background: radial-gradient(circle, rgba(204,0,0,0.12) 0%, transparent 70%); }
 
     .hero-glow-2 {
-      position: absolute;
-      width: 400px; height: 400px;
+      position: absolute; width: 400px; height: 400px;
       background: radial-gradient(circle, rgba(224,78,0,0.08) 0%, transparent 70%);
-      bottom: 20%; right: 5%;
-      pointer-events: none;
+      bottom: 20%; right: 5%; pointer-events: none; transition: background 0.5s;
     }
+    body.lang-jp .hero-glow-2 { background: radial-gradient(circle, rgba(153,0,0,0.08) 0%, transparent 70%); }
 
     .hero-content { position: relative; max-width: 900px; }
 
     .hero-label {
-      font-size: 0.75rem;
-      color: var(--accent3);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0;
+      font-size: 0.75rem; color: var(--accent3); letter-spacing: 0.2em;
+      text-transform: uppercase; margin-bottom: 1.5rem; opacity: 0;
       animation: fadeUp 0.6s 0.2s forwards;
     }
-
     .hero-label::before { content: '> '; color: var(--accent3); }
 
     h1 {
-      font-family: var(--sans);
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.3s forwards;
+      font-family: var(--sans); font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 800; line-height: 1.0; letter-spacing: -0.02em;
+      margin-bottom: 0.5rem; opacity: 0; animation: fadeUp 0.6s 0.3s forwards;
     }
 
     h1 .name-accent {
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .hero-subtitle {
-      font-family: var(--mono);
-      font-size: clamp(0.85rem, 2vw, 1rem);
-      color: var(--text-mid);
-      margin-bottom: 2.5rem;
-      max-width: 560px;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.4s forwards;
+      font-family: var(--mono); font-size: clamp(0.85rem, 2vw, 1rem);
+      color: var(--text-mid); margin-bottom: 2.5rem; max-width: 560px;
+      opacity: 0; animation: fadeUp 0.6s 0.4s forwards;
     }
 
     .hero-subtitle .typing-cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1em;
-      background: var(--accent3);
-      margin-left: 2px;
-      animation: blink 1s step-end infinite;
-      vertical-align: middle;
+      display: inline-block; width: 2px; height: 1em; background: var(--accent3);
+      margin-left: 2px; animation: blink 1s step-end infinite; vertical-align: middle;
     }
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.5s forwards;
-    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.6s 0.5s forwards; }
 
     .tag {
-      font-size: 0.7rem;
-      padding: 0.3rem 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      color: var(--text-dim);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: var(--bg2);
-      transition: all 0.2s;
+      font-size: 0.7rem; padding: 0.3rem 0.8rem; border: 1px solid var(--border);
+      border-radius: 2px; color: var(--text-dim); letter-spacing: 0.1em;
+      text-transform: uppercase; background: var(--bg2); transition: all 0.2s;
     }
+    .tag:hover { border-color: var(--accent); color: var(--accent); }
 
-    .tag:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(255,107,26,0.05);
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.6s forwards;
-    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.6s 0.6s forwards; }
 
     .btn {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 2px;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
+      font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none; padding: 0.75rem 1.5rem;
+      border-radius: 2px; transition: all 0.2s; cursor: pointer; border: none;
     }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #0a0a0a;
-      font-weight: 700;
-    }
-
-    .btn-primary:hover {
-      background: #ff8c42;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 30px rgba(255,107,26,0.3);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--text-mid);
-      border: 1px solid var(--border);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(255,107,26,0.05);
-    }
+    .btn-primary { background: var(--accent); color: #0a0a0a; font-weight: 700; }
+    .btn-primary:hover { background: var(--accent3); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(255,107,26,0.3); }
+    .btn-ghost { background: transparent; color: var(--text-mid); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
     .hero-scroll-hint {
-      position: absolute;
-      bottom: 2rem;
-      left: 3rem;
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 1s forwards;
+      position: absolute; bottom: 2rem; left: 3rem; font-size: 0.65rem;
+      color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 0.8rem; opacity: 0; animation: fadeUp 0.6s 1s forwards;
     }
 
-    .scroll-line {
-      width: 40px;
-      height: 1px;
-      background: var(--text-dim);
-      position: relative;
-      overflow: hidden;
-    }
+    .scroll-line { width: 40px; height: 1px; background: var(--text-dim); position: relative; overflow: hidden; }
+    .scroll-line::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--accent); animation: scanLine 2s ease-in-out infinite; }
 
-    .scroll-line::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: var(--accent);
-      animation: scanLine 2s ease-in-out infinite;
-    }
+    section { padding: 6rem 3rem; max-width: 1100px; margin: 0 auto; }
+    .section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3.5rem; }
+    .section-num { font-size: 0.65rem; color: var(--accent3); letter-spacing: 0.2em; white-space: nowrap; }
+    .section-title { font-family: var(--sans); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.02em; }
+    .section-line { flex: 1; height: 1px; background: var(--border); }
 
-    /* ── SECTIONS */
-    section {
-      padding: 6rem 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .section-num {
-      font-size: 0.65rem;
-      color: var(--accent3);
-      letter-spacing: 0.2em;
-      white-space: nowrap;
-    }
-
-    .section-title {
-      font-family: var(--sans);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ── ABOUT */
     #about { padding-top: 2rem; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-    }
-
-    .about-text p strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .about-highlight {
-      color: var(--accent3) !important;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .stat-box {
-      background: var(--bg2);
-      padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 2px; height: 0;
-      background: var(--accent);
-      transition: height 0.4s;
-    }
-
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 1.2rem; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .about-highlight { color: var(--accent3) !important; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .stat-box { background: var(--bg2); padding: 1.5rem; position: relative; overflow: hidden; }
+    .stat-box::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--accent); transition: height 0.4s; }
     .stat-box:hover::before { height: 100%; }
-
-    .stat-num {
-      font-family: var(--sans);
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent);
-      display: block;
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-
-    .stat-label {
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .about-location {
-      margin-top: 2rem;
-      padding: 1rem 1.2rem;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent3);
-      font-size: 0.8rem;
-      color: var(--text-mid);
-    }
-
+    .stat-num { font-family: var(--sans); font-size: 2rem; font-weight: 800; color: var(--accent); display: block; line-height: 1; margin-bottom: 0.4rem; }
+    .stat-label { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; }
+    .about-location { margin-top: 2rem; padding: 1rem 1.2rem; background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--accent3); font-size: 0.8rem; color: var(--text-mid); }
     .about-location span { color: var(--accent3); }
 
-    /* ── SKILLS */
     #skills { background: var(--bg); }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .skill-category {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      position: relative;
-      transition: border-color 0.2s;
-    }
-
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .skill-category { background: var(--bg2); border: 1px solid var(--border); padding: 1.5rem; position: relative; transition: border-color 0.2s; }
     .skill-category:hover { border-color: var(--accent); }
-
-    .skill-category-title {
-      font-size: 0.65rem;
-      color: var(--accent);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .skill-category-title::before {
-      content: '//';
-      color: var(--text-dim);
-    }
-
-    .skill-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .skill-item {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .skill-bar-bg {
-      flex: 1;
-      height: 2px;
-      background: var(--border);
-      border-radius: 1px;
-      overflow: hidden;
-    }
-
-    .skill-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: 1px;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
+    .skill-category-title { font-size: 0.65rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+    .skill-category-title::before { content: '//'; color: var(--text-dim); }
+    .skill-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .skill-item { display: flex; align-items: center; gap: 0.8rem; }
+    .skill-bar-bg { flex: 1; height: 2px; background: var(--border); border-radius: 1px; overflow: hidden; }
+    .skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 1px; transform: scaleX(0); transform-origin: left; transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); }
     .skill-bar-fill.animate { transform: scaleX(1); }
+    .skill-name { font-size: 0.75rem; color: var(--text-mid); width: 100px; white-space: nowrap; }
+    .skill-level { font-size: 0.65rem; color: var(--text-dim); width: 60px; text-align: right; }
 
-    .skill-name {
-      font-size: 0.75rem;
-      color: var(--text-mid);
-      width: 100px;
-      white-space: nowrap;
-    }
-
-    .skill-level {
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      width: 60px;
-      text-align: right;
-    }
-
-    /* ── PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      padding: 1.8rem;
-      position: relative;
-      transition: all 0.3s;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,107,26,0.03) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .project-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 20px 60px rgba(255,107,26,0.1);
-    }
-
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .project-card { background: var(--bg2); border: 1px solid var(--border); padding: 1.8rem; position: relative; transition: all 0.3s; overflow: hidden; cursor: pointer; }
+    .project-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,107,26,0.03) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 20px 60px rgba(255,107,26,0.1); }
     .project-card:hover::before { opacity: 1; }
-
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-    }
-
-    .project-icon {
-      font-size: 1.5rem;
-      line-height: 1;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 0.6rem;
-    }
-
-    .project-link {
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      text-decoration: none;
-      padding: 0.25rem 0.5rem;
-      border: 1px solid var(--border);
-      letter-spacing: 0.1em;
-      transition: all 0.2s;
-    }
-
-    .project-link:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .project-num {
-      position: absolute;
-      top: 1.8rem;
-      right: 1.8rem;
-      font-size: 3rem;
-      font-family: var(--sans);
-      font-weight: 800;
-      color: var(--border);
-      line-height: 1;
-      pointer-events: none;
-      transition: color 0.3s;
-    }
-
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+    .project-icon { font-size: 1.5rem; line-height: 1; }
+    .project-links { display: flex; gap: 0.6rem; }
+    .project-link { font-size: 0.65rem; color: var(--text-dim); text-decoration: none; padding: 0.25rem 0.5rem; border: 1px solid var(--border); letter-spacing: 0.1em; transition: all 0.2s; }
+    .project-link:hover { color: var(--accent); border-color: var(--accent); }
+    .project-num { position: absolute; top: 1.8rem; right: 1.8rem; font-size: 3rem; font-family: var(--sans); font-weight: 800; color: var(--border); line-height: 1; pointer-events: none; transition: color 0.3s; }
     .project-card:hover .project-num { color: rgba(255,107,26,0.06); }
+    .project-title { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--text); }
+    .project-desc { font-size: 0.78rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.2rem; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tech-tag { font-size: 0.65rem; padding: 0.2rem 0.5rem; background: var(--bg3); border: 1px solid var(--border); color: var(--text-dim); letter-spacing: 0.05em; border-radius: 2px; }
+    .project-status { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.65rem; color: var(--accent3); letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent3); animation: pulse 2s ease-in-out infinite; }
 
-    .project-title {
-      font-family: var(--sans);
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-      color: var(--text);
-    }
-
-    .project-desc {
-      font-size: 0.78rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-    }
-
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .tech-tag {
-      font-size: 0.65rem;
-      padding: 0.2rem 0.5rem;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      letter-spacing: 0.05em;
-      border-radius: 2px;
-    }
-
-    .project-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.65rem;
-      color: var(--accent3);
-      letter-spacing: 0.1em;
-      margin-bottom: 0.8rem;
-    }
-
-    .status-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent3);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    /* ── CONTACT */
-    #contact {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    #contact .section-header {
-      justify-content: center;
-    }
-
-    .contact-intro {
-      font-size: 0.85rem;
-      color: var(--text-mid);
-      line-height: 1.8;
-      margin-bottom: 3rem;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.75rem;
-      color: var(--text-mid);
-      text-decoration: none;
-      padding: 0.8rem 1.4rem;
-      border: 1px solid var(--border);
-      background: var(--bg2);
-      letter-spacing: 0.05em;
-      transition: all 0.2s;
-    }
-
-    .contact-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(255,107,26,0.05);
-    }
-
+    #contact { max-width: 700px; margin: 0 auto; text-align: center; }
+    #contact .section-header { justify-content: center; }
+    .contact-intro { font-size: 0.85rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 3rem; }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .contact-link { display: flex; align-items: center; gap: 0.6rem; font-size: 0.75rem; color: var(--text-mid); text-decoration: none; padding: 0.8rem 1.4rem; border: 1px solid var(--border); background: var(--bg2); letter-spacing: 0.05em; transition: all 0.2s; }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
     .contact-link .link-icon { font-size: 1rem; }
-
-    .contact-terminal {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      text-align: left;
-      font-size: 0.78rem;
-      color: var(--text-mid);
-      line-height: 1.9;
-    }
-
+    .contact-terminal { background: var(--bg2); border: 1px solid var(--border); padding: 1.5rem; text-align: left; font-size: 0.78rem; color: var(--text-mid); line-height: 1.9; }
     .contact-terminal .t-line::before { content: '$ '; color: var(--accent3); }
     .contact-terminal .t-comment { color: var(--text-dim); }
     .contact-terminal .t-val { color: var(--accent); }
 
-    /* ── FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      letter-spacing: 0.1em;
-    }
-
+    footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.1em; }
     footer span { color: var(--accent3); }
 
-    /* ── ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes scanLine { 0% { left: -100%; } 100% { left: 100%; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0; }
-    }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @keyframes scanLine {
-      0%   { left: -100%; }
-      100% { left: 100%; }
-    }
+    .project-card-link { text-decoration: none; color: inherit; display: block; }
+    .project-card-link:focus-visible .project-card { border-color: var(--accent); outline: none; }
+    .project-card-link .project-card { height: 100%; }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(0.8); }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    /* ── CLICKABLE PROJECT CARDS */
-    .project-card-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .project-card-link:focus-visible .project-card {
-      border-color: var(--accent);
-      outline: none;
-    }
-
-    /* ── CLICKABLE PROJECT CARD LINKS */
-    .project-card-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .project-card-link .project-card {
-      height: 100%;
-    }
-    /* ── RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       nav ul { gap: 1rem; }
@@ -763,11 +296,15 @@
   <nav>
     <div class="nav-logo"><span>~/</span>jack-moxey</div>
     <ul>
-      <li><a href="#about">about</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#contact">contact</a></li>
+      <li><a href="#about" data-en="about" data-jp="私について">about</a></li>
+      <li><a href="#skills" data-en="skills" data-jp="スキル">skills</a></li>
+      <li><a href="#projects" data-en="projects" data-jp="プロジェクト">projects</a></li>
+      <li><a href="#contact" data-en="contact" data-jp="お問い合わせ">contact</a></li>
     </ul>
+    <button class="lang-toggle" onclick="toggleLang()">
+      <span class="flag">🇯🇵</span>
+      <span id="langLabel">日本語</span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -776,29 +313,27 @@
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
     <div class="hero-content">
-      <p class="hero-label">available for work — tokyo, japan</p>
+      <p class="hero-label" data-en="available for work — tokyo, japan" data-jp="求職中 — 東京、日本">available for work — tokyo, japan</p>
       <h1>Jack<br/><span class="name-accent">Moxey</span></h1>
-      <p class="hero-subtitle">
-        Builder of digital products. Designer. Developer. <span class="typing-cursor"></span>
-      </p>
+      <p class="hero-subtitle">Builder of digital products. Designer. Developer. <span class="typing-cursor"></span></p>
       <div class="hero-tags">
-        <span class="tag">UX / UI Design</span>
+        <span class="tag" data-en="UX / UI Design" data-jp="UX / UIデザイン">UX / UI Design</span>
         <span class="tag">JavaScript</span>
         <span class="tag">React</span>
         <span class="tag">Python</span>
-        <span class="tag">Sales</span>
-        <span class="tag">TEFL Certified</span>
-        <span class="tag">Tokyo Based</span>
+        <span class="tag" data-en="Sales" data-jp="営業">Sales</span>
+        <span class="tag" data-en="TEFL Certified" data-jp="TEFL認定">TEFL Certified</span>
+        <span class="tag" data-en="Tokyo Based" data-jp="東京在住">Tokyo Based</span>
       </div>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">view projects</a>
-        <a href="#contact" class="btn btn-ghost">get in touch</a>
+        <a href="#projects" class="btn btn-primary" data-en="view projects" data-jp="プロジェクトを見る">view projects</a>
+        <a href="#contact" class="btn btn-ghost" data-en="get in touch" data-jp="お問い合わせ">get in touch</a>
         <a href="https://jackmoxey.framer.website" target="_blank" class="btn btn-ghost">portfolio ↗</a>
       </div>
     </div>
     <div class="hero-scroll-hint">
       <div class="scroll-line"></div>
-      scroll to explore
+      <span data-en="scroll to explore" data-jp="スクロールして探索">scroll to explore</span>
     </div>
   </section>
 
@@ -806,35 +341,45 @@
   <section id="about">
     <div class="section-header reveal">
       <span class="section-num">// 01</span>
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title" data-en="About Me" data-jp="自己紹介">About Me</h2>
       <div class="section-line"></div>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm a <strong>27-year-old</strong> from the UK, currently based in <span class="about-highlight">Tokyo, Japan</span> on a Working Holiday visa. I relocated because I believe the best growth happens when you put yourself somewhere new and figure it out.</p>
-        <p>My background spans <strong>high-performance sales</strong>, <strong>UX/UI design</strong>, and <strong>digital product development</strong>. I taught myself JavaScript, React, and TypeScript while building real products used by real people — and I'm now learning Python and full stack development.</p>
-        <p>I hold formal qualifications in <strong>UX and UI Design</strong> from Glasgow Caledonian University, a <strong>120-hour TEFL/TESOL certificate</strong>, and I'm actively building toward a career in tech in Japan.</p>
+        <p data-en="I'm a <strong>27-year-old</strong> from the UK, currently based in <span class='about-highlight'>Tokyo, Japan</span> on a Working Holiday visa. I relocated because I believe the best growth happens when you put yourself somewhere new and figure it out."
+           data-jp="イギリス出身の<strong>27歳</strong>です。現在はワーキングホリデービザで<span class='about-highlight'>東京、日本</span>に在住しています。自分を新しい環境に置くことが最大の成長につながると信じ、移住を決断しました。">
+          I'm a <strong>27-year-old</strong> from the UK, currently based in <span class="about-highlight">Tokyo, Japan</span> on a Working Holiday visa. I relocated because I believe the best growth happens when you put yourself somewhere new and figure it out.
+        </p>
+        <p data-en="My background spans <strong>high-performance sales</strong>, <strong>UX/UI design</strong>, and <strong>digital product development</strong>. I taught myself JavaScript, React, and TypeScript while building real products used by real people — and I'm now learning Python and full stack development."
+           data-jp="<strong>ハイパフォーマンス営業</strong>、<strong>UX/UIデザイン</strong>、<strong>デジタルプロダクト開発</strong>にわたる幅広い経歴を持っています。実際のユーザーに使われるプロダクトを構築しながら、JavaScript・React・TypeScriptを独学で習得しました。現在はPythonとフルスタック開発を学習中です。">
+          My background spans <strong>high-performance sales</strong>, <strong>UX/UI design</strong>, and <strong>digital product development</strong>. I taught myself JavaScript, React, and TypeScript while building real products used by real people — and I'm now learning Python and full stack development.
+        </p>
+        <p data-en="I hold formal qualifications in <strong>UX and UI Design</strong> from Glasgow Caledonian University, a <strong>120-hour TEFL/TESOL certificate</strong>, and I'm actively building toward a career in tech in Japan."
+           data-jp="グラスゴー・カレドニアン大学の<strong>UX・UIデザイン</strong>の正式資格、<strong>120時間TEFLおよびTESOL認定証</strong>を保有しており、日本でのテックキャリアに向けて積極的に努力しています。">
+          I hold formal qualifications in <strong>UX and UI Design</strong> from Glasgow Caledonian University, a <strong>120-hour TEFL/TESOL certificate</strong>, and I'm actively building toward a career in tech in Japan.
+        </p>
         <div class="about-location">
-          <span>📍 Current location:</span> Saitama, Japan — immediate start available
+          <span data-en="📍 Current location:" data-jp="📍 現在地：">📍 Current location:</span>
+          <span data-en=" Saitama, Japan — immediate start available" data-jp=" 埼玉県、日本 — 即日勤務可能"> Saitama, Japan — immediate start available</span>
         </div>
       </div>
       <div class="reveal">
         <div class="about-stats">
           <div class="stat-box">
             <span class="stat-num">500+</span>
-            <span class="stat-label">Users on live products</span>
+            <span class="stat-label" data-en="Users on live products" data-jp="ライブプロダクトのユーザー数">Users on live products</span>
           </div>
           <div class="stat-box">
             <span class="stat-num">2</span>
-            <span class="stat-label">Companies founded</span>
+            <span class="stat-label" data-en="Companies founded" data-jp="設立した会社数">Companies founded</span>
           </div>
           <div class="stat-box">
             <span class="stat-num">3+</span>
-            <span class="stat-label">Years client-facing</span>
+            <span class="stat-label" data-en="Years client-facing" data-jp="顧客対応年数">Years client-facing</span>
           </div>
           <div class="stat-box">
             <span class="stat-num">#1</span>
-            <span class="stat-label">Branch record holder</span>
+            <span class="stat-label" data-en="Branch record holder" data-jp="支店記録保持者">Branch record holder</span>
           </div>
         </div>
       </div>
@@ -846,91 +391,87 @@
     <div style="max-width:1100px; margin:0 auto;">
       <div class="section-header reveal">
         <span class="section-num">// 02</span>
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title" data-en="Skills" data-jp="スキル">Skills</h2>
         <div class="section-line"></div>
       </div>
       <div class="skills-grid">
-
         <div class="skill-category reveal">
-          <div class="skill-category-title">Frontend</div>
+          <div class="skill-category-title" data-en="Frontend" data-jp="フロントエンド">Frontend</div>
           <div class="skill-list">
             <div class="skill-item">
               <span class="skill-name">JavaScript</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.75"></div></div>
-              <span class="skill-level">Intermediate</span>
+              <span class="skill-level" data-en="Intermediate" data-jp="中級">Intermediate</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">React</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.65"></div></div>
-              <span class="skill-level">Intermediate</span>
+              <span class="skill-level" data-en="Intermediate" data-jp="中級">Intermediate</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">TypeScript</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.55"></div></div>
-              <span class="skill-level">Learning</span>
+              <span class="skill-level" data-en="Learning" data-jp="学習中">Learning</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">HTML / CSS</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.80"></div></div>
-              <span class="skill-level">Confident</span>
+              <span class="skill-level" data-en="Confident" data-jp="自信あり">Confident</span>
             </div>
           </div>
         </div>
-
         <div class="skill-category reveal">
-          <div class="skill-category-title">Backend & Data</div>
+          <div class="skill-category-title" data-en="Backend & Data" data-jp="バックエンド & データ">Backend & Data</div>
           <div class="skill-list">
             <div class="skill-item">
               <span class="skill-name">Python</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.40"></div></div>
-              <span class="skill-level">Learning</span>
+              <span class="skill-level" data-en="Learning" data-jp="学習中">Learning</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">SQL</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.35"></div></div>
-              <span class="skill-level">Learning</span>
+              <span class="skill-level" data-en="Learning" data-jp="学習中">Learning</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">Node.js</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.50"></div></div>
-              <span class="skill-level">Familiar</span>
+              <span class="skill-level" data-en="Familiar" data-jp="基礎あり">Familiar</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">APIs / REST</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.60"></div></div>
-              <span class="skill-level">Familiar</span>
+              <span class="skill-level" data-en="Familiar" data-jp="基礎あり">Familiar</span>
             </div>
           </div>
         </div>
-
         <div class="skill-category reveal">
-          <div class="skill-category-title">Design</div>
+          <div class="skill-category-title" data-en="Design" data-jp="デザイン">Design</div>
           <div class="skill-list">
             <div class="skill-item">
               <span class="skill-name">Figma</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.85"></div></div>
-              <span class="skill-level">Advanced</span>
+              <span class="skill-level" data-en="Advanced" data-jp="上級">Advanced</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">UX Research</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.80"></div></div>
-              <span class="skill-level">Advanced</span>
+              <span class="skill-level" data-en="Advanced" data-jp="上級">Advanced</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">Framer</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.70"></div></div>
-              <span class="skill-level">Confident</span>
+              <span class="skill-level" data-en="Confident" data-jp="自信あり">Confident</span>
             </div>
             <div class="skill-item">
               <span class="skill-name">Blender 3D</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.60"></div></div>
-              <span class="skill-level">Intermediate</span>
+              <span class="skill-level" data-en="Intermediate" data-jp="中級">Intermediate</span>
             </div>
           </div>
         </div>
-
         <div class="skill-category reveal">
-          <div class="skill-category-title">Currently Learning</div>
+          <div class="skill-category-title" data-en="Currently Learning" data-jp="現在学習中">Currently Learning</div>
           <div class="skill-list">
             <div class="skill-item">
               <span class="skill-name">Python</span>
@@ -938,23 +479,22 @@
               <span class="skill-level">FreeCodeCamp</span>
             </div>
             <div class="skill-item">
-              <span class="skill-name">Networking</span>
+              <span class="skill-name" data-en="Networking" data-jp="ネットワーク">Networking</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.30"></div></div>
               <span class="skill-level">Codecademy</span>
             </div>
             <div class="skill-item">
-              <span class="skill-name">OS Concepts</span>
+              <span class="skill-name" data-en="OS Concepts" data-jp="OS基礎">OS Concepts</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.30"></div></div>
               <span class="skill-level">Codecademy</span>
             </div>
             <div class="skill-item">
-              <span class="skill-name">Japanese</span>
+              <span class="skill-name" data-en="Japanese" data-jp="日本語">Japanese</span>
               <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="0.15"></div></div>
-              <span class="skill-level">Beginner</span>
+              <span class="skill-level" data-en="Beginner" data-jp="初級">Beginner</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -963,7 +503,7 @@
   <section id="projects">
     <div class="section-header reveal">
       <span class="section-num">// 03</span>
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title" data-en="Projects" data-jp="プロジェクト">Projects</h2>
       <div class="section-line"></div>
     </div>
     <div class="projects-grid">
@@ -978,7 +518,7 @@
               <span class="project-link">code</span>
             </div>
           </div>
-          <div class="project-status"><span class="status-dot"></span>live</div>
+          <div class="project-status"><span class="status-dot"></span><span data-en="live" data-jp="公開中">live</span></div>
           <h3 class="project-title">Volume 1 Climbing — Digital Platform</h3>
           <p class="project-desc">Designed and built the customer-facing digital platform for Volume 1 Climbing. Conducted 10+ usability testing sessions, redesigned 3 core user journeys, and reduced task completion time by ~30%.</p>
           <div class="project-tech">
@@ -1000,7 +540,7 @@
               <span class="project-link">code</span>
             </div>
           </div>
-          <div class="project-status"><span class="status-dot"></span>building</div>
+          <div class="project-status"><span class="status-dot"></span><span data-en="building" data-jp="制作中">building</span></div>
           <h3 class="project-title">Job Application Tracker</h3>
           <p class="project-desc">A Python CLI tool that logs job applications to a CSV file, tracks status, and generates a weekly summary report. Built as a practical learning project while studying Python.</p>
           <div class="project-tech">
@@ -1020,7 +560,7 @@
               <span class="project-link">live ↗</span>
             </div>
           </div>
-          <div class="project-status"><span class="status-dot"></span>live</div>
+          <div class="project-status"><span class="status-dot"></span><span data-en="live" data-jp="公開中">live</span></div>
           <h3 class="project-title">Personal Portfolio — Framer</h3>
           <p class="project-desc">UX/UI design portfolio built in Framer showcasing design case studies, prototypes, and product work. Demonstrates front-end sensibility and attention to visual detail.</p>
           <div class="project-tech">
@@ -1041,7 +581,7 @@
             </div>
           </div>
           <div class="project-status" style="color:var(--accent2)">
-            <span class="status-dot" style="background:var(--accent2); animation:none;"></span>planned
+            <span class="status-dot" style="background:var(--accent2); animation:none;"></span><span data-en="planned" data-jp="計画中">planned</span>
           </div>
           <h3 class="project-title">AI Cover Letter Generator</h3>
           <p class="project-desc">A Python tool that takes a job description as input and uses the Anthropic API to generate a tailored cover letter summary. Planned next project as Python skills develop.</p>
@@ -1055,17 +595,14 @@
 
       <div class="project-card reveal" style="border-style: dashed; opacity: 0.5; cursor:default;">
         <span class="project-num">05</span>
-        <div class="project-top">
-          <span class="project-icon">➕</span>
-        </div>
+        <div class="project-top"><span class="project-icon">➕</span></div>
         <div class="project-status" style="color:var(--text-dim)">
-          <span class="status-dot" style="background:var(--text-dim); animation:none;"></span>upcoming
+          <span class="status-dot" style="background:var(--text-dim); animation:none;"></span><span data-en="upcoming" data-jp="近日公開">upcoming</span>
         </div>
-        <h3 class="project-title">Next Project</h3>
-        <p class="project-desc">Currently in learning phase. This slot will be filled as Python and full stack skills develop. Ideas include a salary calculator, web scraper, or Salesforce dashboard.</p>
-        <div class="project-tech">
-          <span class="tech-tag">TBD</span>
-        </div>
+        <h3 class="project-title" data-en="Next Project" data-jp="次のプロジェクト">Next Project</h3>
+        <p class="project-desc" data-en="Currently in learning phase. This slot will be filled as Python and full stack skills develop. Ideas include a salary calculator, web scraper, or Salesforce dashboard."
+           data-jp="現在学習中です。Pythonとフルスタックのスキルアップとともにこのスロットがまもなく埋まる予定です。">Currently in learning phase. This slot will be filled as Python and full stack skills develop. Ideas include a salary calculator, web scraper, or Salesforce dashboard.</p>
+        <div class="project-tech"><span class="tech-tag">TBD</span></div>
       </div>
 
     </div>
@@ -1076,15 +613,17 @@
     <div style="max-width:700px; margin:0 auto; text-align:center;">
       <div class="section-header reveal" style="justify-content:center;">
         <span class="section-num">// 04</span>
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title" data-en="Get In Touch" data-jp="お問い合わせ">Get In Touch</h2>
         <div class="section-line"></div>
       </div>
-      <p class="contact-intro reveal">
+      <p class="contact-intro reveal"
+         data-en="I'm actively looking for opportunities in Tokyo across tech, design, and sales. Currently on a Working Holiday visa — available to start immediately."
+         data-jp="テック・デザイン・営業分野での東京での就職機会を積極的に探しています。現在ワーキングホリデービザで在留中 — 即日勤務可能です。">
         I'm actively looking for opportunities in Tokyo across tech, design, and sales. Currently on a Working Holiday visa — available to start immediately.
       </p>
       <div class="contact-links reveal">
-        <a href="/cdn-cgi/l/email-protection#642e05070f240e05070f090b1c011d4a070b09" class="contact-link">
-          <span class="link-icon">✉️</span> <span class="__cf_email__" data-cfemail="2c664d4f476c464d4f474143544955024f4341">[email&#160;protected]</span>
+        <a href="mailto:Jack@jackmoxey.com" class="contact-link">
+          <span class="link-icon">✉️</span> Jack@jackmoxey.com
         </a>
         <a href="https://linkedin.com/in/jack-moxey-8808b0308" target="_blank" class="contact-link">
           <span class="link-icon">💼</span> LinkedIn
@@ -1094,26 +633,26 @@
         </a>
       </div>
       <div class="contact-terminal reveal">
-        <div class="t-line t-comment"># contact details</div>
+        <div class="t-line t-comment" data-en="# contact details" data-jp="# 連絡先情報"># contact details</div>
         <div class="t-line">name = <span class="t-val">"Jack Moxey"</span></div>
         <div class="t-line">location = <span class="t-val">"Saitama, Japan 🇯🇵"</span></div>
-        <div class="t-line">email = <span class="t-val">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d577c7e765d777c7e767072657864337e7270">[email&#160;protected]</a>"</span></div>
-        <div class="t-line">visa = <span class="t-val">"Working Holiday (expires Mar 2027)"</span></div>
+        <div class="t-line">email = <span class="t-val">"Jack@jackmoxey.com"</span></div>
+        <div class="t-line">visa = <span class="t-val" data-en='"Working Holiday (expires Mar 2027)"' data-jp='"ワーキングホリデー（2027年3月まで）"'>"Working Holiday (expires Mar 2027)"</span></div>
         <div class="t-line">available = <span class="t-val">True</span></div>
-        <div class="t-line t-comment"># open to: tech, design, sales, teaching</div>
+        <div class="t-line t-comment" data-en="# open to: tech, design, sales, teaching" data-jp="# 希望職種：テック、デザイン、営業、英語教育"># open to: tech, design, sales, teaching</div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div>built by <span>jack moxey</span> — tokyo, japan</div>
-    <div>designed with intention. coded with curiosity.</div>
+    <div data-en="built by <span>jack moxey</span> — tokyo, japan" data-jp="<span>ジャック・モクシー</span>制作 — 東京、日本">built by <span>jack moxey</span> — tokyo, japan</div>
+    <div data-en="designed with intention. coded with curiosity." data-jp="意図を持ってデザインし、好奇心を持ってコーディング。">designed with intention. coded with curiosity.</div>
     <div><span>2026</span></div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ── INTERSECTION OBSERVER — reveal on scroll
+  <script>
+    // ── SCROLL REVEAL
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -1125,47 +664,52 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    // ── SKILL BARS — animate when visible
+    // ── SKILL BARS
     const skillBars = document.querySelectorAll('.skill-bar-fill');
     const barObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const bar = entry.target;
-          const width = bar.dataset.width;
-          bar.style.width = (width * 100) + '%';
+          bar.style.width = (bar.dataset.width * 100) + '%';
           setTimeout(() => bar.classList.add('animate'), 100);
           barObserver.unobserve(bar);
         }
       });
     }, { threshold: 0.5 });
-    skillBars.forEach(bar => {
-      bar.style.width = '0%';
-      barObserver.observe(bar);
-    });
+    skillBars.forEach(bar => { bar.style.width = '0%'; barObserver.observe(bar); });
 
     // ── TYPING EFFECT
-    const phrases = [
+    const phrasesEN = [
       'Builder of digital products.',
       'UX / UI Designer.',
       'Learning Python daily.',
       'Based in Tokyo. 🗼',
       'Available immediately.',
     ];
+    const phrasesJP = [
+      'デジタルプロダクトの開発者。',
+      'UX / UIデザイナー。',
+      '毎日Pythonを学習中。',
+      '東京在住。🗼',
+      '即日勤務可能。',
+    ];
+
+    let phrases = [...phrasesEN];
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
+    let typeTimeout = null;
     const typingEl = document.querySelector('.hero-subtitle');
 
     function type() {
       const current = phrases[phraseIndex];
       const cursor = '<span class="typing-cursor"></span>';
-
       if (!isDeleting) {
         charIndex++;
         typingEl.innerHTML = current.slice(0, charIndex) + cursor;
         if (charIndex === current.length) {
           isDeleting = true;
-          setTimeout(type, 2000);
+          typeTimeout = setTimeout(type, 2000);
           return;
         }
       } else {
@@ -1176,26 +720,55 @@
           phraseIndex = (phraseIndex + 1) % phrases.length;
         }
       }
-      setTimeout(type, isDeleting ? 40 : 70);
+      typeTimeout = setTimeout(type, isDeleting ? 40 : 70);
     }
-    setTimeout(type, 1500);
+    typeTimeout = setTimeout(type, 1500);
 
-    // ── SMOOTH NAV HIGHLIGHT
+    // ── LANGUAGE + THEME TOGGLE
+    let currentLang = 'en';
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'jp' : 'en';
+      const isJP = currentLang === 'jp';
+
+      // Switch red theme
+      document.body.classList.toggle('lang-jp', isJP);
+
+      // Update button flag and label
+      document.querySelector('.flag').textContent = isJP ? '🇬🇧' : '🇯🇵';
+      document.getElementById('langLabel').textContent = isJP ? 'EN' : '日本語';
+
+      // Swap all translatable text
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const val = el.getAttribute('data-' + currentLang);
+        if (val) el.innerHTML = val;
+      });
+
+      // Reset typing animation with new language phrases
+      clearTimeout(typeTimeout);
+      phrases = isJP ? [...phrasesJP] : [...phrasesEN];
+      phraseIndex = 0;
+      charIndex = 0;
+      isDeleting = false;
+      typingEl.innerHTML = '<span class="typing-cursor"></span>';
+      typeTimeout = setTimeout(type, 400);
+    }
+
+    // ── NAV HIGHLIGHT ON SCROLL
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav ul a');
     window.addEventListener('scroll', () => {
-      let current
+      let current = '';
       sections.forEach(section => {
         if (window.scrollY >= section.offsetTop - 200) {
           current = section.getAttribute('id');
         }
       });
       navLinks.forEach(link => {
-        link.style.color = link.getAttribute('href') === '#' + current
-          ? 'var(--accent)'
-          : '';
+        link.style.color = link.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
       });
     });
   </script>
 </body>
 </html>
+
