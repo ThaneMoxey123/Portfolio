@@ -340,3 +340,42 @@ img,video,svg { max-width:100%; }
   .credential-grid { grid-template-columns:minmax(0,1fr); }
   .project-visual { max-width:100%; }
 }
+
+
+/* V10: iOS Safari horizontal viewport containment (overrides all V3-V9 rules) */
+html { width:100%; max-width:100%; overflow-x:hidden !important; }
+body { width:100%; max-width:100%; overflow-x:hidden !important; }
+.hero { width:100%; max-width:100%; overflow-x:hidden !important; }
+.carousel-shell { width:100%; max-width:100%; overflow-x:hidden !important; }
+.carousel-viewport { width:100%; max-width:100%; overflow-x:hidden !important; }
+@media (max-width:900px) {
+  :root { --rail:0px; }
+  body { padding-right:0 !important; }
+  .rail { display:none !important; }
+  .topbar { width:100%; max-width:100%; }
+  .content-wrap, .about, .credentials, .projects, .contact { width:100%; max-width:100%; min-width:0; }
+  .about-grid { display:grid; grid-template-columns:minmax(0,1fr) !important; }
+  .about-grid > *, .about-copy, .services, .services article > * { min-width:0; max-width:100%; }
+  .about-copy h2 { overflow-wrap:anywhere; }
+  .portrait-placeholder.profile-photo { width:min(100%,370px); }
+  .services article { grid-template-columns:36px minmax(0,1fr); }
+  .credential-grid,.project-list { grid-template-columns:minmax(0,1fr) !important; }
+  .project-card,.project-card:nth-child(3) { min-width:0; width:100%; }
+  .project-visual { min-width:0; max-width:100%; }
+  .carousel-track { width:max-content; max-width:none; padding:0 !important; }
+  .project-slide.featured { width:86vw !important; max-width:86vw; min-width:0; grid-template-columns:minmax(0,1fr) !important; }
+  .carousel-shell::before { max-width:100%; }
+}
+
+/* V11: targeted About section mobile layout — no desktop columns on phones */
+@media screen and (max-width: 900px) {
+  section.about, .about.content-wrap { box-sizing:border-box; width:100%; max-width:100%; min-width:0; padding-left:clamp(18px,5vw,28px); padding-right:clamp(18px,5vw,28px); }
+  section.about .about-grid { display:flex !important; flex-direction:column !important; align-items:stretch !important; gap:32px !important; width:100% !important; max-width:100% !important; min-width:0 !important; grid-template-columns:none !important; }
+  section.about .about-grid > * { flex:0 1 auto !important; width:100% !important; max-width:100% !important; min-width:0 !important; }
+  section.about .about-copy h2 { font-size:clamp(34px,9vw,52px); line-height:1.06; max-width:100%; overflow-wrap:break-word; }
+  section.about .about-copy p { max-width:100%; overflow-wrap:break-word; }
+  section.about .portrait-placeholder.profile-photo { width:min(100%,370px) !important; max-width:370px !important; align-self:center; }
+  section.about .services { display:grid; grid-template-columns:minmax(0,1fr); gap:26px; }
+  section.about .services article { display:grid; grid-template-columns:34px minmax(0,1fr) !important; gap:14px; min-width:0; }
+  section.about .services article > * { min-width:0; }
+}
