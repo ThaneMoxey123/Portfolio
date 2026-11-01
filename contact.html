@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f8f6"><meta name="description" content="Get in touch with Jack Moxey about website design, UX/UI, SEO, analytics or a new digital project."><title>Contact Jack Moxey | Web Design & UX Projects</title><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="128x128" href="favicon.png"><meta property="og:type" content="website"><meta property="og:title" content="Contact Jack Moxey | Web Design & UX Projects"><meta property="og:description" content="Get in touch with Jack Moxey about website design, UX/UI, SEO, analytics or a new digital project."><meta property="og:image" content="https://jackmoxey.com/assets/og-cover.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--paper:#f7f8f6;--ink:#15191f;--machine:#111820;--cyan:#22c7f2;--mist:#dceff4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}::selection{background:var(--cyan);color:var(--machine)}
+.site-nav{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:clamp(20px,3vw,48px);border-bottom:1px solid #d9e0e2}.brand{font-size:clamp(27px,3vw,49px);font-weight:950;letter-spacing:-.075em;line-height:.84}.links{display:flex;align-items:flex-end;flex-direction:column;gap:3px}.links a{font-weight:900;letter-spacing:-.04em;font-size:clamp(14px,1.6vw,22px)}.links a:hover,.links a[aria-current=page]{color:#137b9b}
+main{max-width:1480px;margin:auto;padding:clamp(48px,7vw,110px) clamp(20px,5vw,75px) 115px}.eyebrow{font:700 12px/1.4 monospace;letter-spacing:.13em;color:#55727d}.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(40px,6vw,115px);align-items:start}.intro h1{font-size:clamp(70px,10vw,160px);font-weight:950;letter-spacing:-.105em;line-height:.79;margin:27px 0 32px}.intro h1 span{color:#6b828d}.intro p{max-width:430px;color:#50636b;font-size:clamp(16px,1.5vw,21px);line-height:1.55}.accent-line{height:4px;width:95px;background:var(--cyan);margin-top:35px}.form-wrap{border-top:4px solid var(--machine);padding-top:24px}.form-top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:28px;font:700 11px monospace;letter-spacing:.1em;color:#61747b}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 20px}.field{display:flex;flex-direction:column;gap:10px}.field.full{grid-column:1/-1}label{font-size:12px;font-weight:900;letter-spacing:.055em;text-transform:uppercase}.optional{font-size:11px;font-weight:400;color:#72858c;text-transform:none;letter-spacing:0}input,textarea,select{width:100%;background:#fff;border:1px solid #bdcbd0;border-radius:0;padding:17px 16px;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}input:focus,textarea:focus,select:focus{border-color:#168eaf;box-shadow:0 0 0 3px #22c7f229}input::placeholder,textarea::placeholder{color:#82929a}textarea{min-height:178px;resize:vertical;line-height:1.5}select{appearance:auto}.note{font-size:12px;line-height:1.6;color:#60737b;margin:22px 0}.submit{width:100%;display:flex;justify-content:space-between;align-items:center;border:0;background:var(--machine);color:#fff;font-size:16px;font-weight:900;letter-spacing:.03em;padding:22px 23px;transition:background .2s}.submit:hover{background:#0e7595}.submit:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}.below{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:12px;color:#60737b}.below a{font-weight:800;color:#1b6178;text-decoration:underline;text-underline-offset:3px}.footer{padding:24px clamp(20px,3vw,48px);border-top:1px solid #d9e0e2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font:700 10px monospace;letter-spacing:.09em;color:#667780}
+@media(max-width:860px){.intro{grid-template-columns:1fr}.intro h1{font-size:clamp(75px,13vw,125px)}.intro p{max-width:700px}.form-wrap{max-width:720px}}@media(max-width:530px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:1}.intro h1{font-size:clamp(68px,16vw,100px)}main{padding-bottom:75px}.site-nav{gap:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* V9 contact atmosphere: the same ambient binary vocabulary as the homepage */
+#contactBinary{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.8}
+.site-nav,main,.footer{position:relative;z-index:1}
+input,textarea,select{position:relative;border:1px solid #98b9c7;box-shadow:0 0 0 1px rgba(34,199,242,.18),0 0 12px rgba(34,199,242,.18);animation:fieldPulse 3.8s ease-in-out infinite;will-change:box-shadow}
+.field:nth-child(2n) input,.field:nth-child(2n) select,.field:nth-child(2n) textarea{animation-delay:-1.8s}
+input:hover,textarea:hover,select:hover{border-color:#22c7f2}
+input:focus,textarea:focus,select:focus{animation:none;border-color:#11b9ef;box-shadow:0 0 0 2px rgba(34,199,242,.3),0 0 23px rgba(34,199,242,.53),0 0 45px rgba(34,199,242,.18)}
+@keyframes fieldPulse{
+ 0%,100%{box-shadow:0 0 0 1px rgba(34,199,242,.18),0 0 10px rgba(34,199,242,.13),0 0 22px rgba(34,199,242,.06)}
+ 50%{box-shadow:0 0 0 1px rgba(34,199,242,.48),0 0 19px rgba(34,199,242,.34),0 0 34px rgba(34,199,242,.13)}
+}
+@media(prefers-reduced-motion:reduce){input,textarea,select{animation:none!important}}
+</style><link rel="canonical" href="https://jackmoxey.com/contact.html"><meta property="og:url" content="https://jackmoxey.com/contact.html"></head><body><canvas id="contactBinary" aria-hidden="true"></canvas>
+<header class="site-nav"><a class="brand" href="index.html#home" aria-label="Jack Moxey, homepage">JACK<br>MOXEY</a><nav class="links" aria-label="Main navigation"><a href="index.html#work">WORK</a><a href="index.html#story">MY STORY</a><a href="contact.html" aria-current="page">CONTACT</a></nav></header>
+<main><div class="intro"><section><div class="eyebrow">04 / GET IN TOUCH &nbsp; — &nbsp; HUMAN × MACHINE</div><h1>LET'S<br><span>CREATE.</span></h1><p>Tell me about your business and what you're looking to achieve. Whether it's a new website, a redesign, or a better digital experience, I'd love to hear what you have in mind.</p><div class="accent-line"></div></section>
+<section class="form-wrap" aria-labelledby="formTitle"><div class="form-top"><span id="formTitle">NEW PROJECT ENQUIRY</span><span>01 — 06</span></div><form id="projectForm" action="mailto:Jackmoxey.jp@gmail.com" method="post" enctype="text/plain"><div class="form-grid">
+<div class="field"><label for="clientName">Your name *</label><input id="clientName" name="name" autocomplete="name" placeholder="Your full name" required maxlength="120"></div>
+<div class="field"><label for="businessName">Business name *</label><input id="businessName" name="business" autocomplete="organization" placeholder="Your company or brand" required maxlength="150"></div>
+<div class="field"><label for="businessLocation">Business location *</label><input id="businessLocation" name="location" placeholder="City, country / online" required maxlength="160"></div>
+<div class="field"><label for="clientEmail">Email address *</label><input id="clientEmail" name="email" type="email" autocomplete="email" placeholder="you@company.com" required maxlength="200"></div>
+<div class="field full"><label for="clientPhone">Phone number <span class="optional">(including country code)</span> *</label><input id="clientPhone" name="phone" type="tel" autocomplete="tel" placeholder="+44 7700 900000" required maxlength="40"></div>
+<div class="field full"><label for="projectService">What can I help with? <span class="optional">(optional)</span></label><select id="projectService" name="service"><option value="Not specified">Select a service</option><option>New website design &amp; development</option><option>Website redesign</option><option>UX / UI design</option><option>SEO &amp; website improvements</option><option>Analytics &amp; conversion tracking</option><option>Something else / not sure yet</option></select></div>
+<div class="field full"><label for="projectMessage">Tell me about your project *</label><textarea id="projectMessage" name="message" placeholder="What does your business do? What would you like to improve or build? What are your goals?" required minlength="15" maxlength="5000"></textarea></div>
+</div><p class="note">This form prepares an email in your email application. Your message is only sent after you review and send that email. Please don't include passwords or sensitive account details.</p><button class="submit" type="submit"><span>PREPARE MY ENQUIRY</span><span aria-hidden="true">↗</span></button></form><div class="below"><span>Prefer email? <a href="mailto:Jackmoxey.jp@gmail.com?subject=Project%20enquiry">Jackmoxey.jp@gmail.com</a></span><span>PROJECTS / COLLABORATIONS / QUESTIONS</span></div></section></div></main>
+<footer class="footer"><span>© <span id="year"></span> JACK MOXEY</span><span>HUMAN CREATIVITY × MACHINE INTELLIGENCE</span><a href="index.html#home">BACK TO HOME ↑</a></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('projectForm').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;const get=id=>document.getElementById(id).value.trim();const subject='New project enquiry — '+get('businessName');const body=['Name: '+get('clientName'),'Business: '+get('businessName'),'Business location: '+get('businessLocation'),'Email: '+get('clientEmail'),'Phone: '+get('clientPhone'),'Service: '+get('projectService'),'','Project details:',''+get('projectMessage')].join('\n');window.location.href='mailto:Jackmoxey.jp@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)});</script>
+
+<script>
+/* V9: gentle, downward-falling binary streams matching the home page. */
+(()=>{
+ const canvas=document.getElementById('contactBinary'),ctx=canvas.getContext('2d');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let w=0,h=0,dpr=1,streams=[],last=0;
+ function resize(){
+  w=innerWidth;h=innerHeight;dpr=Math.min(devicePixelRatio||1,2);
+  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  streams=Array.from({length:Math.ceil(w/19)},(_,i)=>({
+   x:i*19+Math.random()*8,y:Math.random()*h,
+   v:.22+Math.random()*.46,len:5+Math.random()*17,
+   phase:Math.random()*Math.PI*2,hue:[185,196,275,160][i%4]
+  }));
+ }
+ resize();addEventListener('resize',resize,{passive:true});
+ let visible=true;
+ document.addEventListener('visibilitychange',()=>{visible=!document.hidden});
+ function draw(t){
+  requestAnimationFrame(draw);
+  if(!visible||t-last<35)return;
+  const dt=last?Math.min(t-last,60):35;last=t;
+  ctx.clearRect(0,0,w,h);ctx.font='10px monospace';
+  for(const stream of streams){
+   for(let j=0;j<stream.len;j++){
+    const y=(stream.y+j*14)%h;
+    const fade=1-j/stream.len;
+    const alpha=(.08+.17*(.5+.5*Math.sin(t*.001+stream.phase+j*.16)))*fade;
+    ctx.fillStyle=`hsla(${stream.hue},58%,32%,${alpha})`;
+    ctx.fillText(Math.sin(stream.phase+j*8+t*.0002)>0?'1':'0',stream.x,y);
+   }
+   if(!reduced)stream.y=(stream.y+stream.v*dt*.06)%h;
+  }
+ }
+ requestAnimationFrame(draw);
+})();
+</script>
+</body></html>

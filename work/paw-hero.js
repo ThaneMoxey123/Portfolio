@@ -1,0 +1,1 @@
+(()=>{const hero=document.getElementById('caseHero'),btn=hero?.querySelector('.case-mobile-toggle');if(!hero||!btn)return;btn.addEventListener('click',()=>{const on=hero.classList.toggle('wireframe-on');btn.setAttribute('aria-pressed',String(on));btn.textContent=on?'SHOW FINAL DESIGN':'REVEAL WIREFRAME'});})();

@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#f7f8f6"/><title>Jack Moxey | UX Designer & Web Developer — Human × Machine</title><link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="128x128" href="favicon.png"><meta property="og:type" content="website"><meta property="og:title" content="Jack Moxey | UX Designer & Web Developer — Human × Machine"><meta property="og:description" content="Explore Jack Moxey’s interactive portfolio, featuring UX design, web development, e-commerce and creative digital experiences."><meta property="og:image" content="https://jackmoxey.com/assets/og-cover.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="description" content="Explore Jack Moxey’s interactive portfolio, featuring UX design, web development, e-commerce and creative digital experiences."><style>
+:root{--paper:#f7f8f6;--ink:#15191f;--machine:#111820;--cyan:#22c7f2;--mist:#dceff4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}button,a{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}::selection{background:#22c7f2;color:#111820}.hero{height:100svh;min-height:650px;position:relative;overflow:hidden;background:var(--paper);isolation:isolate}.binary{position:absolute;inset:0;width:100%;height:100%;opacity:.7;pointer-events:none}.topbar{position:absolute;z-index:20;left:clamp(20px,3vw,48px);right:clamp(20px,3vw,48px);top:clamp(18px,2.6vw,38px);display:flex;justify-content:space-between;align-items:flex-start}.brand{font-size:clamp(26px,3.1vw,52px);font-weight:950;letter-spacing:-.075em;line-height:.84}.nav{display:flex;flex-direction:column;align-items:flex-end;gap:1px}.nav a{font-size:clamp(14px,1.6vw,24px);font-weight:900;letter-spacing:-.045em;line-height:1.05;transition:opacity .2s}.nav a:hover{opacity:.42}.hero-title{position:absolute;left:5vw;top:34%;z-index:2;font-size:clamp(55px,9vw,160px);font-weight:950;line-height:.82;letter-spacing:-.095em;color:#565b5e;pointer-events:none}.hero-title span{display:block}.portrait-stage{position:absolute;z-index:4;bottom:-1.5%;left:50%;height:min(85vh,860px);width:min(72vw,780px);transform:translateX(-50%);pointer-events:none}.portrait-mover{width:100%;height:100%;position:relative;will-change:transform}.portrait-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom center;user-select:none;-webkit-user-drag:none}.portrait-layer.human{z-index:4;clip-path:inset(0 var(--split,0%) 0 0)}.portrait-layer.android{z-index:3;mask-image:radial-gradient(circle 105px at var(--mx,-500px) var(--my,-500px),#000 0%,#000 51%,transparent 100%);-webkit-mask-image:radial-gradient(circle 105px at var(--mx,-500px) var(--my,-500px),#000 0%,#000 51%,transparent 100%)}.portrait-hit{position:absolute;z-index:10;inset:0;pointer-events:auto;cursor:crosshair}.eyes{position:absolute;inset:0;z-index:4;pointer-events:none;mask-image:radial-gradient(circle 105px at var(--mx,-500px) var(--my,-500px),#000 0%,#000 51%,transparent 100%);-webkit-mask-image:radial-gradient(circle 105px at var(--mx,-500px) var(--my,-500px),#000 0%,#000 51%,transparent 100%)}.eye{position:absolute;width:1.9%;aspect-ratio:1;top:38%;border-radius:50%;background:radial-gradient(circle,#fff 0 10%,#30e6ff 20% 45%,#026da7 55%,transparent 72%);filter:drop-shadow(0 0 5px #00c8ff);transform:translate(-50%,-50%)}.eye.left{left:39%}.eye.right{left:61%}.hero-bottom{position:absolute;z-index:11;bottom:20px;left:3vw;right:3vw;display:flex;justify-content:space-between;font-family:monospace;letter-spacing:.1em;color:#626d73;font-size:10px;pointer-events:none}.hero-bottom span:last-child{text-align:right}.section-heading{font-size:clamp(50px,8vw,130px);letter-spacing:-.085em;line-height:.9;margin:0;font-weight:950}.archive-track{height:420vh;position:relative;background:var(--machine);color:white}.archive-sticky{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden;display:flex;flex-direction:column;padding:clamp(22px,4vw,60px)}.eyebrow{font-family:monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#a1b5c0}.archive-heading{z-index:4;position:relative}.archive-heading .section-heading{font-size:clamp(52px,8vw,120px)}.archive-space{position:absolute;inset:0;perspective:1100px;display:flex;justify-content:center;align-items:center;transform:translateY(5vh)}.folder-deck{position:relative;width:min(90vw,1000px);height:min(50vh,420px);transform:rotateX(12deg) rotateY(-13deg) rotateZ(-7deg);transform-style:preserve-3d}.folder{position:absolute;top:10%;height:77%;width:31%;left:calc(1% + var(--i)*22%);border:1px solid #4e6a7b;background:linear-gradient(140deg,#334b5c,#182632 65%,#121c25);box-shadow:-18px 24px 30px #0007,inset 0 1px #9cc1d030;border-radius:8px 8px 3px 3px;transform:translate3d(0,var(--lift,0px),calc(var(--i)*25px));transition:box-shadow .25s;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:18px;will-change:transform}.folder:before{content:"";position:absolute;inset:0 0 auto;height:6px;background:linear-gradient(90deg,transparent,#22c7f2aa,transparent);opacity:var(--active,0)}.folder .file-no{font-size:clamp(34px,6vw,90px);font-weight:900;letter-spacing:-.09em;opacity:.25}.folder .file-title{font-size:clamp(13px,1.7vw,23px);font-weight:850;letter-spacing:-.05em}.folder .file-type{font:10px monospace;letter-spacing:.14em;color:#8db1c5}.folder button{align-self:flex-start;border:1px solid #9bb3bf;border-radius:30px;padding:8px 12px;background:transparent;color:white;font-size:11px;margin-top:12px}.folder button:hover{background:var(--cyan);color:#101820}.archive-progress{position:absolute;bottom:30px;left:4vw;right:4vw;display:flex;align-items:center;gap:16px;font:12px monospace;color:#93a8b7}.archive-line{height:1px;background:#455965;flex:1}.archive-line b{display:block;width:0;height:100%;background:var(--cyan)}.story-track{height:460vh;background:var(--mist);position:relative}.story-sticky{height:100svh;min-height:600px;position:sticky;top:0;overflow:hidden;padding:clamp(22px,4vw,60px)}.story-head{position:relative;z-index:2}.story-viewport{position:absolute;left:0;right:0;top:30%;bottom:12%;overflow:hidden}.story-strip{height:100%;display:flex;gap:5vw;align-items:center;padding-left:10vw;will-change:transform}.milestone{flex:0 0 min(58vw,600px);height:80%;display:flex;flex-direction:column;justify-content:center;position:relative}.milestone .year{font-size:clamp(70px,12vw,190px);font-weight:950;letter-spacing:-.1em;line-height:.9;color:#9bb7c4}.milestone .milestone-name{font-size:clamp(23px,3vw,46px);font-weight:900;letter-spacing:-.06em;max-width:480px}.milestone p{max-width:370px;color:#556d79;line-height:1.6;font-size:clamp(13px,1.3vw,17px)}.milestone:after{content:"";position:absolute;bottom:6%;left:0;width:100%;height:1px;background:#7e9da9}.milestone:before{content:"";position:absolute;bottom:calc(6% - 4px);left:0;width:9px;height:9px;border-radius:50%;background:#1c6b86}.story-foot{position:absolute;bottom:25px;left:4vw;right:4vw;display:flex;justify-content:space-between;font:11px monospace;letter-spacing:.1em;color:#506977}.contact{min-height:75svh;background:var(--paper);padding:clamp(40px,7vw,110px) 5vw;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.contact h2{font-size:clamp(66px,12vw,180px);line-height:.83;letter-spacing:-.1em;margin:22px 0 45px}.contact p{max-width:600px;color:#52616a;line-height:1.5;font-size:clamp(16px,2vw,24px)}.email-link{border-bottom:3px solid var(--ink);font-size:clamp(19px,3vw,38px);font-weight:800;letter-spacing:-.05em;padding-bottom:8px}.email-link:hover{color:#1388a6;border-color:#1388a6}.footer{background:#111820;color:#d9e3e8;padding:26px 5vw;display:flex;justify-content:space-between;gap:20px;font:11px monospace;letter-spacing:.1em}.note{color:#617481;font-size:12px}.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;z-index:100;background:white;padding:12px}.mobile-hint{display:none}@media(max-width:650px){.hero{min-height:590px}.hero-title{top:29%;left:4vw;font-size:clamp(48px,13vw,88px)}.portrait-stage{width:110vw;height:72vh;bottom:-1%}.hero-bottom{font-size:8px}.archive-sticky,.story-sticky{min-height:500px}.folder-deck{width:120vw;transform:scale(.82) rotateX(12deg) rotateY(-13deg) rotateZ(-7deg)}.folder{padding:9px}.folder .file-title{font-size:13px}.folder button{font-size:9px;padding:6px}.milestone{flex-basis:80vw}.mobile-hint{display:block}.footer{flex-direction:column}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Prototype V2: scroll transformation and fluid cursor reveal */
+.hero-track{height:430svh;position:relative;background:var(--paper)}
+.hero-sticky{position:sticky;top:0;height:100svh;min-height:0;overflow:hidden;isolation:isolate}
+.machine-background{position:absolute;inset:0;background:radial-gradient(ellipse at 75% 44%,#24415b 0%,#111f30 42%,#080e17 100%);clip-path:inset(0 calc(100% - var(--split,100%)) 0 0);pointer-events:none;z-index:0}
+/* split value denotes right side reveal width; at 0 no machine background */
+.machine-background{clip-path:inset(0 0 0 calc(100% - var(--split,0%)))}
+.hero-title{z-index:2;left:3.8vw;top:31%;font-size:clamp(55px,8.5vw,148px)}
+.machine-title{position:absolute;right:3.8vw;top:31%;z-index:2;text-align:right;font-size:clamp(55px,8.5vw,148px);font-weight:950;line-height:.82;letter-spacing:-.09em;color:#dce9f3;opacity:var(--machine-text,0);pointer-events:none}
+.machine-title span{display:block}
+.portrait-stage{height:min(98vh,1040px);width:min(85vw,980px);bottom:-2%;z-index:5}
+.portrait-layer{object-fit:contain;object-position:bottom center}
+.portrait-layer.android{z-index:3;mask-image:none;-webkit-mask-image:none;clip-path:inset(0 0 0 var(--portrait-split,100%))}
+.portrait-layer.human{z-index:4;clip-path:inset(0 var(--split,0%) 0 0)}
+.portrait-mover{transform:translate3d(0,0,0)}
+.fluid-reveal{position:absolute;inset:0;width:100%;height:100%;z-index:9;pointer-events:none}
+.hero .topbar{z-index:21}.hero .hero-bottom{z-index:21}
+.hero .nav a,.hero .brand{mix-blend-mode:difference;color:#fff}
+@media(max-width:650px){.hero-track{height:360svh}.portrait-stage{width:135vw;height:86svh;bottom:-1%}.hero-title{font-size:clamp(43px,12vw,80px);top:30%;left:3vw}.machine-title{font-size:clamp(40px,11vw,75px);top:46%;right:3vw}.hero .topbar{top:20px}}
+
+/* V2.1 fixes: explicit light-header contrast and dependable CSS-mask reveal. */
+.hero .brand,.hero .nav a{color:#15191f!important;mix-blend-mode:normal!important;text-shadow:none!important}
+.hero.transformed .nav a{color:#e8f3fa!important}
+.binary{opacity:.96}
+.reveal-overlay{position:absolute;inset:0;z-index:12;pointer-events:none;opacity:0;transition:opacity .18s ease;background:radial-gradient(ellipse at 75% 44%,#24415b 0%,#111f30 42%,#080e17 100%);--mx:-9999px;--my:-9999px;
+-webkit-mask-image:radial-gradient(ellipse 126px 119px at var(--mx) var(--my),#000 46%,transparent 100%),radial-gradient(ellipse 60px 94px at calc(var(--mx) + 65px) calc(var(--my) - 20px),#000 18%,transparent 100%),radial-gradient(ellipse 79px 51px at calc(var(--mx) - 57px) calc(var(--my) + 46px),#000 12%,transparent 100%);
+mask-image:radial-gradient(ellipse 126px 119px at var(--mx) var(--my),#000 46%,transparent 100%),radial-gradient(ellipse 60px 94px at calc(var(--mx) + 65px) calc(var(--my) - 20px),#000 18%,transparent 100%),radial-gradient(ellipse 79px 51px at calc(var(--mx) - 57px) calc(var(--my) + 46px),#000 12%,transparent 100%)}
+.reveal-overlay.active{opacity:1}
+.reveal-robot-stage{position:absolute;bottom:-2%;left:50%;height:min(98vh,1040px);width:min(85vw,980px);pointer-events:none}
+.reveal-robot-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom center}
+@media(max-width:650px){.reveal-robot-stage{width:135vw;height:86svh;bottom:-1%}.hero.transformed .nav a{color:#e8f3fa!important}}
+
+/* V2.2 — measured portrait registration and editorial typography spacing */
+.hero .hero-title{left:1.2vw;top:32%;font-size:clamp(48px,7.7vw,132px);letter-spacing:-.085em}
+.hero .machine-title{right:1.0vw;top:32%;font-size:clamp(48px,7.5vw,132px);letter-spacing:-.085em}
+.hero .brand{transition:color .13s ease,text-shadow .13s ease}
+.hero .brand.reveal-over-brand{color:#f0f7fb!important;text-shadow:0 1px 12px #08121d88!important}
+@media(max-width:650px){.hero .hero-title{left:1.5vw;top:30%;font-size:clamp(41px,11.2vw,78px)}.hero .machine-title{right:1vw;top:46%;font-size:clamp(40px,10.2vw,72px)}}
+
+/* V2.4: dark text on paper; light only where the cursor or scroll reveal is dark. */
+.hero .brand,.hero .nav a{color:#15191f!important;mix-blend-mode:normal!important;text-shadow:none!important}
+.hero .brand.reveal-over-brand,.hero .nav a.reveal-over-brand{color:#f0f7fb!important;text-shadow:0 1px 12px #08121d88!important}
+.hero.transformed .nav a{color:#f0f7fb!important}
+.hero.transformed .nav a.reveal-over-brand{color:#f0f7fb!important}
+.hero .hero-bottom{color:#626d73!important;mix-blend-mode:normal!important}
+/* Mirror the two hero headlines only in the revealed dark area; preserve the portrait's layering. */
+.hero .hero-title,.hero .machine-title{transition:color .16s ease}
+.hero .hero-title.reveal-contrast{color:#e4f0f6!important}
+.hero .machine-title.reveal-contrast{color:#e4f0f6!important}
+
+
+.hero .reveal-type{z-index:13;pointer-events:none;opacity:0;color:#e8f2f9!important;transition:opacity .15s ease;
+-webkit-mask-image:radial-gradient(ellipse 126px 119px at var(--mx,-9999px) var(--my,-9999px),#000 46%,transparent 100%),radial-gradient(ellipse 60px 94px at calc(var(--mx,-9999px) + 65px) calc(var(--my,-9999px) - 20px),#000 18%,transparent 100%),radial-gradient(ellipse 79px 51px at calc(var(--mx,-9999px) - 57px) calc(var(--my,-9999px) + 46px),#000 12%,transparent 100%);
+mask-image:radial-gradient(ellipse 126px 119px at var(--mx,-9999px) var(--my,-9999px),#000 46%,transparent 100%),radial-gradient(ellipse 60px 94px at calc(var(--mx,-9999px) + 65px) calc(var(--my,-9999px) - 20px),#000 18%,transparent 100%),radial-gradient(ellipse 79px 51px at calc(var(--mx,-9999px) - 57px) calc(var(--my,-9999px) + 46px),#000 12%,transparent 100%)}
+.hero:has(.reveal-overlay.active) .reveal-type{opacity:1}
+.hero .machine-type{opacity:0}
+.hero:has(.reveal-overlay.active) .machine-type{opacity:var(--machine-text,0)}
+
+
+/* V3 additions: ambient binary is global and cursor smoke sits above the page without blocking interactions */
+#binary{display:none!important}
+#globalBinary{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;user-select:none;z-index:30}
+#globalBinary{opacity:.78}
+/* The previews are behind the actual folder labels, like miniature sites seen through frosted glass. */
+.folder{isolation:isolate}
+.folder-preview{position:absolute;inset:-7%;background-position:center;background-size:cover;filter:blur(10px) saturate(.72);opacity:var(--preview-opacity,.12);transform:scale(1.1);transition:opacity .15s linear;z-index:-2;pointer-events:none}
+.folder-frost{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(135deg,rgba(206,229,240,.19),rgba(28,48,65,.50) 45%,rgba(8,19,29,.63));backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+/* Paw & Solve: preserve legible screenshot while retaining a light glass finish. */
+.folder--paw .folder-preview{filter:blur(1.1px) saturate(1.06) contrast(1.06);transform:scale(1.035);opacity:var(--preview-opacity,.35)}
+.folder--paw .folder-frost{background:linear-gradient(135deg,rgba(206,229,240,.08),rgba(18,38,51,.14) 50%,rgba(8,19,29,.25));backdrop-filter:blur(.4px);-webkit-backdrop-filter:blur(.4px)}
+.folder .file-type,.folder .file-no,.folder .file-title,.folder button{position:relative;z-index:2;text-shadow:0 1px 9px rgba(0,0,0,.35)}
+.folder .file-no{opacity:.5}
+.folder:after{content:'';position:absolute;inset:0;pointer-events:none;border:1px solid rgba(212,239,250,.12);border-radius:inherit}
+@media (prefers-reduced-motion:reduce){#globalBinary{display:none}}
+/* V5.5: fix actual stacking order of Paw & Solve screenshot.
+   Earlier negative z-index layers were painted behind the opaque folder background. */
+.folder--paw{isolation:isolate}
+.folder--paw .folder-preview{
+  z-index:0;
+  inset:0;
+  background-position:center center;
+  background-size:cover;
+  transform:scale(1.015);
+  filter:blur(.5px) saturate(1.08) contrast(1.06);
+  opacity:var(--preview-opacity,.72);
+  transition:opacity .25s ease,filter .25s ease;
+}
+.folder--paw .folder-frost{
+  z-index:1;
+  background:linear-gradient(180deg,rgba(9,24,29,.08) 0%,rgba(9,24,29,.02) 40%,rgba(6,18,25,.57) 100%);
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.folder--paw > div:not(.folder-preview):not(.folder-frost){position:relative;z-index:2}
+.folder--paw.file-open .folder-preview{filter:blur(0px) saturate(1.1) contrast(1.08);opacity:1}
+.folder--paw.file-open .folder-frost{background:linear-gradient(180deg,rgba(7,20,25,.01) 0%,rgba(7,20,25,.01) 44%,rgba(7,20,25,.48) 100%)}
+.folder--paw .file-no{opacity:.66;text-shadow:0 2px 9px #071b25a8}
+.folder--paw .file-title,.folder--paw .file-type,.folder--paw button{text-shadow:0 2px 7px #06151cf2,0 1px 2px #06151c}
+/* V4.0: unchanged fluid motion, native-density antialiased reveal mask. */
+#inkCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:12;display:block}
+#revealOverlay{display:none!important}
+.hero .reveal-type{display:none!important}
+.hero .topbar{z-index:25}
+@media(prefers-reduced-motion:reduce){#inkCanvas{display:none}}
+
+/* V4.8 — full-machine hold, typography exit, fixed portrait and full-screen binary-blue cleansing wave.
+   All cursor-fluid, archive, timeline and contact rules remain unchanged. */
+.hero-track{height:345svh}
+.hero{--dissolve:0;--hero-exit:0}
+.hero .portrait-stage{opacity:1;scale:1;transform-origin:50% 72%;}
+.hero .hero-title,.hero .machine-title{opacity:calc((1 - var(--hero-exit)) * (1 - var(--text-exit,0)) * var(--title-visibility,1))}
+.hero .machine-title{--title-visibility:var(--machine-text,0)}
+.hero .hero-title{--title-visibility:1}
+.hero .hero-bottom{opacity:calc(1 - var(--hero-exit))}
+.hero .topbar{opacity:calc(1 - var(--hero-exit))}
+.hero .machine-background{background:radial-gradient(ellipse at 75% 44%,#24415b 0%,#111f30 42%,#080e17 100%)}
+#blueDissolve{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:16;opacity:1}
+.hero-transition-shade{position:absolute;inset:0;z-index:15;pointer-events:none;background:#111820;opacity:var(--hero-exit,0)}
+/* The wave affects only the robot. The archive and cursor simulation are untouched. */
+.hero.wave-stage .reveal-overlay,.hero.wave-stage #inkCanvas{opacity:0!important;visibility:hidden!important}
+.hero.wave-stage .portrait-layer.human{visibility:hidden}
+.hero.wave-stage .reveal-type{opacity:0!important}
+.hero.wave-stage .portrait-layer.android{will-change:clip-path}
+
+@media(max-width:650px){.hero-track{height:420svh}}
+@media(prefers-reduced-motion:reduce){#blueDissolve{display:none}}
+
+/* V4.9: Explore controls appear only after a case-study file reaches its full 25% lift. */
+.folder button[data-project]{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .22s ease,transform .22s ease,visibility 0s linear .22s}
+.folder.file-open button[data-project]{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity .22s ease,transform .22s ease,visibility 0s}
+.folder button[data-project]:disabled{cursor:default}
+
+/* V5.1 — journey layout correction: fit milestones below heading, remove line overlay */
+.story-viewport{top:31%;bottom:8%;overflow:hidden}
+.story-strip{align-items:stretch;gap:5vw}
+.milestone{height:100%;min-height:0;justify-content:flex-start;padding:0 0 14px;overflow:hidden}
+.milestone .year{font-size:clamp(72px,10vw,142px);line-height:.88;flex-shrink:0}
+.milestone .milestone-name{font-size:clamp(22px,2.55vw,37px);line-height:1.13;max-width:490px;margin-top:12px;flex-shrink:0}
+.milestone p{font-size:clamp(13px,1.12vw,16px);line-height:1.48;max-width:420px;margin:14px 0 0}
+.milestone:before,.milestone:after{display:none!important}
+@media(max-width:650px){.story-viewport{top:27%;bottom:10%}.milestone .year{font-size:clamp(65px,16vw,105px)}.milestone .milestone-name{font-size:clamp(22px,5.2vw,30px)}.milestone p{font-size:13px;line-height:1.4}}
+@media(max-height:720px) and (min-width:651px){.story-viewport{top:30%;bottom:8%}.milestone .year{font-size:clamp(70px,9vw,120px)}.milestone .milestone-name{font-size:clamp(22px,2.4vw,33px);margin-top:8px}.milestone p{font-size:14px;line-height:1.35;margin-top:9px}}
+
+/* V5.2 — restrained precision reticle; presentation-only, never intercepts input. */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  html.has-custom-cursor,html.has-custom-cursor body,html.has-custom-cursor a,html.has-custom-cursor button,html.has-custom-cursor .portrait-hit{cursor:none!important}
+  #precisionCursor{position:fixed;left:0;top:0;width:27px;height:27px;border:1.5px solid #12b8e6;border-radius:50%;pointer-events:none;z-index:2147483647;transform:translate3d(-100px,-100px,0) translate(-50%,-50%);opacity:0;transition:width .2s ease,height .2s ease,opacity .15s ease,border-color .2s ease;mix-blend-mode:difference;will-change:transform}
+  #precisionCursor:after{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:#24d5ff;transform:translate(-50%,-50%)}
+  #precisionCursor.is-visible{opacity:1}
+  #precisionCursor.is-action{width:42px;height:42px;border-color:#5be8ff}
+  #precisionCursor.is-pressed{width:19px;height:19px}
+}
+
+/* V5.6 — guaranteed visible project image: render on folder surface itself,
+   above the previous opaque gradient. No glass or blur on Project 01. */
+.folder--paw{
+  background-image:linear-gradient(to bottom,rgba(8,18,24,.03) 0%,rgba(8,18,24,.02) 53%,rgba(8,18,24,.64) 100%),url('assets/paw-and-solve-homepage.png') !important;
+  background-position:center, 63% center !important;
+  background-size:cover,cover !important;
+  background-repeat:no-repeat !important;
+}
+.folder--paw .folder-preview,
+.folder--paw .folder-frost{display:none !important}
+.folder--paw .file-no{opacity:.84;color:#fff;text-shadow:0 2px 12px #000d}
+.folder--paw .file-type,.folder--paw .file-title,.folder--paw button{text-shadow:0 2px 8px #000,0 1px 3px #000}
+
+
+/* V5.9 — Paw & Solve starts identical to the other closed folders.
+   The photograph progressively emerges and becomes crisp during its 25% rise. */
+.folder--paw{
+  background:linear-gradient(140deg,#334b5c,#182632 65%,#121c25) !important;
+}
+.folder--paw .folder-preview{
+  display:block !important;
+  position:absolute;inset:0;z-index:0;
+  background-position:63% center;background-size:cover;
+  transform:scale(1.025);
+  opacity:var(--paw-clarity,0) !important;
+  filter:blur(calc((1 - var(--paw-clarity,0)) * 10px)) saturate(1.06);
+  transition:none;
+}
+.folder--paw .folder-frost{
+  display:block !important;
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(140deg,rgba(51,75,92,.94),rgba(24,38,50,.92) 65%,rgba(18,28,37,.9));
+  opacity:calc(1 - var(--paw-clarity,0)) !important;
+  backdrop-filter:none !important;-webkit-backdrop-filter:none !important;
+  pointer-events:none;
+}
+.folder--paw > div:not(.folder-preview):not(.folder-frost){position:relative;z-index:2}
+.folder--paw .file-no{opacity:calc(.5 + .16 * var(--paw-clarity,0));color:#fff}
+.folder--paw.file-open .folder-preview{filter:blur(0px) saturate(1.06)}
+.folder--paw.file-open .folder-frost{opacity:0 !important}
+
+
+/* V6.0 — Mobile/tablet responsive layout; desktop presentation untouched. */
+@media (max-width: 767px) {
+ html,body{max-width:100%;overflow-x:clip}
+ .hero-track{height:360svh}
+ .hero,.hero-sticky{min-height:0;height:100svh}
+ .hero .topbar{left:5vw;right:5vw;top:max(18px,env(safe-area-inset-top));gap:12px}
+ .hero .brand{font-size:clamp(23px,7vw,35px);line-height:.86}
+ .hero .nav{gap:5px}
+ .hero .nav a{font-size:clamp(12px,3.5vw,16px);line-height:1.15}
+ .hero .hero-title{top:27%;left:4vw;font-size:clamp(35px,10.5vw,73px);line-height:.88}
+ .hero .machine-title{top:43%;right:4vw;font-size:clamp(34px,10vw,70px);line-height:.88}
+ .portrait-stage{width:145vw;height:78svh;bottom:-1%}
+ .hero .hero-bottom{left:5vw;right:5vw;bottom:max(15px,env(safe-area-inset-bottom));font-size:8px;gap:12px}
+ .archive-track{height:auto!important;min-height:0}
+ .archive-sticky{position:relative!important;top:auto;height:auto!important;min-height:0!important;overflow:visible;display:block;padding:64px 5vw 76px}
+ .archive-heading{margin-bottom:34px}
+ .archive-heading .section-heading{font-size:clamp(43px,12vw,86px);line-height:.94;overflow-wrap:normal}
+ .archive-space{position:relative!important;inset:auto!important;display:block!important;transform:none!important;perspective:none!important}
+ .folder-deck{position:relative!important;width:100%!important;height:auto!important;display:grid;grid-template-columns:minmax(0,1fr);gap:18px;transform:none!important;transform-style:flat!important}
+ .folder{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;min-height:clamp(245px,70vw,370px);transform:none!important;border-radius:10px;padding:20px;will-change:auto}
+ .folder .file-no{font-size:clamp(65px,19vw,110px)}
+ .folder .file-title{font-size:clamp(20px,5.4vw,29px)}
+ .folder .file-type{font-size:11px}
+ .folder button{font-size:12px;padding:10px 16px;min-height:44px;min-width:96px;margin-top:15px}
+ .folder .folder-preview{z-index:0;opacity:var(--preview-opacity,.6)}
+ .folder .folder-frost{z-index:1}
+ .folder>div:not(.folder-preview):not(.folder-frost){position:relative;z-index:2}
+ .folder--paw .folder-preview{opacity:1!important;filter:none!important}
+ .folder--paw .folder-frost{opacity:0!important}
+ .archive-progress{position:relative;bottom:auto;left:auto;right:auto;margin-top:28px;font-size:10px}
+ .archive-progress span:last-child{font-size:0}
+ .archive-progress span:last-child:after{content:"TAP TO EXPLORE";font-size:10px}
+ .story-track{height:auto!important;min-height:0}
+ .story-sticky{height:auto!important;min-height:0!important;position:relative!important;top:auto;overflow:visible;padding:70px 5vw 75px}
+ .story-head .section-heading{font-size:clamp(42px,11.5vw,80px)}
+ .story-viewport{position:relative!important;inset:auto!important;top:auto!important;bottom:auto!important;overflow:visible!important;margin-top:42px}
+ .story-strip{transform:none!important;height:auto!important;display:flex;flex-direction:column;gap:34px;padding:0!important;align-items:stretch}
+ .milestone{flex:none!important;width:100%;height:auto!important;min-height:0;padding:0 0 32px 0}
+ .milestone .year{font-size:clamp(75px,22vw,125px);line-height:.95}
+ .milestone .milestone-name{font-size:clamp(24px,6.5vw,38px);max-width:100%}
+ .milestone p{max-width:580px;font-size:15px;line-height:1.65;margin-bottom:14px}
+ .milestone:after{bottom:0}
+ .milestone:before{bottom:-4px}
+ .story-foot{position:relative;bottom:auto;left:auto;right:auto;margin-top:30px;gap:12px;font-size:10px}
+ .story-foot span:last-child{font-size:0}
+ .story-foot span:last-child:after{content:"A JOURNEY THROUGH DESIGN";font-size:10px}
+ .contact{min-height:65svh;padding:76px 5vw 88px}
+ .contact h2{font-size:clamp(62px,17vw,115px);margin:24px 0 34px}
+ .contact p{font-size:clamp(16px,4vw,20px)}
+ .email-link{font-size:clamp(22px,6vw,32px);min-height:44px}
+ .footer{padding:30px 5vw;gap:14px}
+}
+@media (min-width: 768px) and (max-width: 1024px){
+ .folder-deck{width:94vw}
+ .archive-heading .section-heading{font-size:clamp(65px,9vw,105px)}
+ .milestone{flex-basis:70vw}
+ .portrait-stage{width:min(100vw,980px)}
+}
+@media (max-width: 380px){
+ .hero .hero-title{font-size:10vw}
+ .hero .machine-title{font-size:9.5vw}
+ .archive-heading .section-heading{font-size:11.4vw}
+ .folder{min-height:245px}
+}
+@media (max-width:767px) and (prefers-reduced-motion:reduce){
+ .hero-track{height:100svh}
+}
+
+/* V9: Kyoto project 02 uses the same reveal treatment as Paw & Solve */
+.folder--kyoto .folder-preview{background-position:center center!important;background-size:cover!important}
+.folder--kyoto .folder-frost{background:linear-gradient(140deg,rgba(56,55,57,.93),rgba(39,35,37,.87) 65%,rgba(29,26,27,.88))!important}
+@media(max-width:767px){.folder--kyoto .folder-preview{opacity:1!important;filter:none!important}.folder--kyoto .folder-frost{opacity:0!important}}
+
+/* V9.4 — only the real iris pixels move; no opaque socket or face patches. */
+.robot-eye-layer{position:absolute;inset:0;z-index:6;pointer-events:none;opacity:0}
+.hero.transformed .robot-eyes-main{opacity:1}
+.robot-eyes-main{clip-path:inset(0 0 0 var(--portrait-split,100%))}
+.robot-eye{position:absolute;width:var(--iris-size,20px);height:var(--iris-size,20px);transform:translate(-50%,-50%);pointer-events:none}
+.robot-iris{position:absolute;inset:0;background-size:100% 100%;background-repeat:no-repeat;transform:translate(var(--look-x,0px),var(--look-y,0px));will-change:transform}
+.robot-eye[data-eye="left"] .robot-iris{background-image:url("assets/robot-pupil-v94-1.png")}
+.robot-eye[data-eye="right"] .robot-iris{background-image:url("assets/robot-pupil-v94-2.png")}
+@media(prefers-reduced-motion:reduce){.robot-iris{will-change:auto}}
+ .sr-only-seo{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style><link rel="canonical" href="https://jackmoxey.com/"><meta property="og:url" content="https://jackmoxey.com/"></head><body><div id="precisionCursor" aria-hidden="true"></div><canvas id="globalBinary" aria-hidden="true"></canvas><a href="#work" class="skip">Skip to work</a>
+<h1 class="sr-only-seo">Jack Moxey — UX Designer and Web Developer</h1><section class="hero-track" id="home" aria-label="Interactive Human and Machine introduction"><div class="hero hero-sticky" id="hero">
+<div class="machine-background" id="machineBackground"></div><canvas class="binary" id="binary" aria-hidden="true"></canvas>
+<header class="topbar"><a class="brand" href="#home">JACK<br>MOXEY</a><nav class="nav" aria-label="Main navigation"><a href="#work">WORK</a><a href="#story">MY STORY</a><a href="contact.html">CONTACT</a></nav></header>
+<div class="hero-title"><span>PRODUCT</span><span>DESIGNER</span></div><div class="machine-title" id="machineTitle"><span>AI</span><span>ENGINEER</span></div>
+<div class="hero-title reveal-type" aria-hidden="true"><span>PRODUCT</span><span>DESIGNER</span></div><div class="machine-title reveal-type machine-type" aria-hidden="true"><span>AI</span><span>ENGINEER</span></div>
+<div class="portrait-stage" id="portraitStage"><div class="portrait-mover" id="portraitMover"><img class="portrait-layer human" id="humanPortrait" src="assets/human.png" alt="Portrait of Jack Moxey"/><img class="portrait-layer android" id="android" src="assets/android-aligned.png" alt=""/><div class="robot-eye-layer robot-eyes-main" aria-hidden="true"><span class="robot-eye" data-eye="left"><span class="robot-iris"></span></span><span class="robot-eye" data-eye="right"><span class="robot-iris"></span></span></div></div></div>
+<div class="reveal-overlay" id="revealOverlay" aria-hidden="true"><div class="reveal-robot-stage" id="revealRobotStage"><img src="assets/android-aligned.png" alt="" /><div class="robot-eye-layer robot-eyes-reveal" aria-hidden="true"><span class="robot-eye" data-eye="left"><span class="robot-iris"></span></span><span class="robot-eye" data-eye="right"><span class="robot-iris"></span></span></div></div></div><canvas id="inkCanvas" aria-hidden="true"></canvas>
+<canvas id="blueDissolve" aria-hidden="true"></canvas><div class="hero-transition-shade" aria-hidden="true"></div><div class="hero-bottom"><span>HUMAN × MACHINE<br>MOVE TO REVEAL</span><span id="heroProgressLabel">DESIGN / INTELLIGENCE<br>SCROLL TO TRANSFORM ↓</span></div>
+</div></section>
+<section class="archive-track" id="work" aria-label="Selected work"><div class="archive-sticky"><div class="archive-heading"><div class="eyebrow">02 / Selected work</div><h2 class="section-heading">THE ARCHIVE</h2></div><div class="archive-space"><div class="folder-deck" id="folderDeck"><article class="folder folder--paw" style="--i:0"><div class="folder-preview" aria-hidden="true" style="background-image:url('assets/paw-and-solve-homepage.png')"></div><div class="folder-frost" aria-hidden="true"></div><div><div class="file-type">PROJECT / 01</div><div class="file-no">01</div></div><div><div class="file-title">PAW & SOLVE</div><button type="button" data-project="Paw & Solve">EXPLORE ↗</button></div></article><article class="folder folder--paw folder--kyoto" style="--i:1"><div class="folder-preview" aria-hidden="true" style="background-image:url('assets/kyoto-homepage.jpg')"></div><div class="folder-frost" aria-hidden="true"></div><div><div class="file-type">PROJECT / 02</div><div class="file-no">02</div></div><div><div class="file-title">CASE STUDY 02</div><button type="button" data-project="Case Study 02">EXPLORE ↗</button></div></article><article class="folder" style="--i:2"><div class="folder-preview" aria-hidden="true" style="background-image:url('assets/project-03.svg')"></div><div class="folder-frost" aria-hidden="true"></div><div><div class="file-type">PROJECT / 03</div><div class="file-no">03</div></div><div><div class="file-title">CASE STUDY 03</div><button type="button" data-project="Case Study 03">EXPLORE ↗</button></div></article><article class="folder" style="--i:3"><div class="folder-preview" aria-hidden="true" style="background-image:url('assets/project-04.svg')"></div><div class="folder-frost" aria-hidden="true"></div><div><div class="file-type">PROJECT / 04</div><div class="file-no">04</div></div><div><div class="file-title">CASE STUDY 04</div><button type="button" data-project="Case Study 04">EXPLORE ↗</button></div></article></div></div><div class="archive-progress"><span id="archiveIndex">01 / 04</span><div class="archive-line"><b id="archiveBar"></b></div><span>SCROLL TO OPEN FILES</span></div></div></section>
+<section class="story-track" id="story" aria-label="My story"><div class="story-sticky"><div class="story-head"><div class="eyebrow" style="color:#506b79">03 / My story</div><h2 class="section-heading">THE JOURNEY</h2></div><div class="story-viewport"><div class="story-strip" id="storyStrip"><article class="milestone"><div class="year">2021</div><div class="milestone-name">THE ENTREPRENEURIAL START</div><p>Founded independent ventures in e-commerce and app development, learning firsthand how to identify customer needs, build products and grow a business from the ground up.</p></article><article class="milestone"><div class="year">2022</div><div class="milestone-name">PEOPLE FIRST</div><p>At Nuffield Health, built a loyal personal-training client base through trust, communication and tailored experiences. Learned that understanding people is the foundation of great service.</p></article><article class="milestone"><div class="year">2024</div><div class="milestone-name">BUSINESS DEVELOPMENT</div><p>Joined Fox & Sons and progressed from Sales Negotiator to Property Valuer. Managed 100+ daily prospecting contacts and set a branch record for new business booked within the first 30 days of promotion.</p></article><article class="milestone"><div class="year">2025</div><div class="milestone-name">DESIGN WITH PURPOSE</div><p>Earned a Level 5 Professional Diploma in UX Design. Designed customer-facing digital products for Volume 1 Climbing, serving 500+ active users, while supporting its marketing and visibility.</p></article><article class="milestone"><div class="year">2026</div><div class="milestone-name">HUMAN × MACHINE</div><p>Continuing Level 5 UI Design studies while combining UX, web development, marketing and AI-assisted workflows to create digital experiences built around real business goals.</p></article></div></div><div class="story-foot"><span>2021 → 2026</span><span>SCROLL TO TRAVEL THROUGH TIME</span></div></div></section>
+<section class="contact" id="contact"><div class="eyebrow" style="color:#59707d">04 / Get in touch</div><h2>LET'S<br>CREATE</h2><p>Have a project in mind? I'd love to hear about it.</p><a class="email-link" id="emailLink" href="contact.html">START A PROJECT ↗</a></section><footer class="footer"><span>© <span id="year"></span> JACK MOXEY</span><span>HUMAN CREATIVITY × MACHINE INTELLIGENCE</span><a href="#home">BACK TO TOP ↑</a></footer>
+<script>
+(()=>{'use strict';const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;document.getElementById('year').textContent=new Date().getFullYear();
+const hero=document.getElementById('hero'),track=document.querySelector('.hero-track'),stage=document.getElementById('portraitStage'),mover=document.getElementById('portraitMover'),android=document.getElementById('android'),human=document.getElementById('humanPortrait');
+let cursor={x:-9999,y:-9999},mouseActive=false,scrollProgress=0,parX=0,parY=0,aimX=0,aimY=0;
+const reveal=document.getElementById('revealOverlay'),revealStage=document.getElementById('revealRobotStage'),brand=document.querySelector('.hero .brand');
+const contrastTargets=[brand,...document.querySelectorAll('.hero .nav a')];
+function updateBrandContrast(x,y){const h=hero.getBoundingClientRect();contrastTargets.forEach(el=>{const r=el.getBoundingClientRect();const dx=Math.max(r.left-h.left-x,0,x-(r.right-h.left)),dy=Math.max(r.top-h.top-y,0,y-(r.bottom-h.top));el.classList.toggle('reveal-over-brand',Math.hypot(dx,dy)<110);});}
+function clamp01(v){return Math.min(1,Math.max(0,v))}
+function heroScroll(){
+ const r=track.getBoundingClientRect();scrollProgress=clamp01(-r.top/Math.max(1,r.height-innerHeight));
+ // Preserve the approved transformation until the full robot is reached.
+ const half=clamp01((scrollProgress-.045)/.37);
+ const full=clamp01((scrollProgress-.43)/.22);
+ const darkWidth=50*half+50*full;
+ hero.style.setProperty('--split',darkWidth+'%');
+ hero.style.setProperty('--portrait-split',(100-darkWidth)+'%');
+ hero.style.setProperty('--machine-text',clamp01((scrollProgress-.16)/.25));
+ // Exit choreography: headlines fade, portrait stays fixed, full-screen blue binary wave erases it.
+ const smooth=t=>{t=clamp01(t);return t*t*(3-2*t)};
+ const textExit=smooth((scrollProgress-.675)/.075);
+ const wave=smooth((scrollProgress-.805)/.155);
+ const exit=smooth((scrollProgress-.97)/.03);
+ hero.style.setProperty('--text-exit',textExit.toFixed(4));
+ hero.style.setProperty('--dissolve',wave.toFixed(5));
+ hero.style.setProperty('--hero-exit',exit.toFixed(4));
+ // The intact robot remains opaque to the right of the moving front.
+ // Remove the robot from left to right, using a gently undulating boundary.
+ if(wave>0){
+  const coords=[];
+  for(let i=0;i<=48;i++){
+   const yy=i*100/48;
+   const edge=Math.max(0,Math.min(100,wave*118-9+Math.sin(i*.44+wave*6)*1.1+Math.sin(i*.19+wave*13)*1.4));
+   coords.push(`${edge.toFixed(2)}% ${yy.toFixed(2)}%`);
+  }
+  android.style.clipPath=`polygon(${coords.join(',')},100% 100%,100% 0%)`;
+ }else android.style.clipPath='';
+ hero.classList.toggle('transformed',scrollProgress>.32);
+ hero.classList.toggle('full-machine',scrollProgress>.65);
+ hero.classList.toggle('wave-stage',scrollProgress>.805);
+ document.getElementById('heroProgressLabel').innerHTML=scrollProgress>.68?'MACHINE STATE<br>BLUE WAVE TRANSITION ↓':'DESIGN / INTELLIGENCE<br>SCROLL TO TRANSFORM ↓';
+} 
+addEventListener('resize',heroScroll);heroScroll();
+hero.addEventListener('pointermove',e=>{if(e.pointerType==='touch'&&e.buttons===0)return;const r=hero.getBoundingClientRect();cursor.x=e.clientX-r.left;cursor.y=e.clientY-r.top;mouseActive=true;reveal.style.setProperty('--mx',cursor.x+'px');reveal.style.setProperty('--my',cursor.y+'px');;updateBrandContrast(cursor.x,cursor.y);document.querySelectorAll('.reveal-type').forEach(el=>{const b=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-b.left)+'px');el.style.setProperty('--my',(e.clientY-b.top)+'px')});aimX=scrollProgress>.675?0:(cursor.x/r.width-.5)*24;aimY=scrollProgress>.675?0:(cursor.y/r.height-.5)*15;},{passive:true});
+hero.addEventListener('pointerleave',()=>{mouseActive=false;aimX=0;aimY=0;reveal.classList.remove('active');contrastTargets.forEach(el=>el.classList.remove('reveal-over-brand'))});
+hero.addEventListener('pointerdown',e=>{const r=hero.getBoundingClientRect();cursor.x=e.clientX-r.left;cursor.y=e.clientY-r.top;reveal.style.setProperty('--mx',cursor.x+'px');reveal.style.setProperty('--my',cursor.y+'px');;updateBrandContrast(cursor.x,cursor.y)});
+function paint(){parX+=(aimX-parX)*.055;parY+=(aimY-parY)*.055;const transform=`translate3d(${reduce||scrollProgress>.675?0:parX}px,${reduce||scrollProgress>.675?0:parY}px,0)`;mover.style.transform=transform;revealStage.style.transform=`translateX(-50%) ${transform}`;requestAnimationFrame(paint)}requestAnimationFrame(paint);
+// V4.8: full-viewport blue binary cleansing wave, driven by scroll position.
+// The existing robot remains fully opaque on the undissolved side of the wave.
+const dissolveCanvas=document.getElementById('blueDissolve');
+const dissolveCtx=dissolveCanvas.getContext('2d');
+let dissolveW=0,dissolveH=0,dissolveDpr=1;
+function sizeDissolve(){const r=hero.getBoundingClientRect();dissolveW=r.width;dissolveH=r.height;dissolveDpr=Math.min(devicePixelRatio||1,2);dissolveCanvas.width=Math.round(dissolveW*dissolveDpr);dissolveCanvas.height=Math.round(dissolveH*dissolveDpr);dissolveCtx.setTransform(dissolveDpr,0,0,dissolveDpr,0,0)}
+sizeDissolve();addEventListener('resize',sizeDissolve,{passive:true});
+const fract=n=>n-Math.floor(n);
+const waveParticles=Array.from({length:4200},(_,i)=>({
+ u:fract(Math.sin((i+1)*127.1)*43758.5453),v:fract(Math.sin((i+1)*311.7)*21347.118),
+ seed:fract(Math.sin((i+1)*74.91)*10347.11),size:1+fract(Math.sin((i+1)*9.17)*7541.9)*3.1
+}));
+function drawBlueDissolve(){
+ dissolveCtx.clearRect(0,0,dissolveW,dissolveH);
+ const p=parseFloat(hero.style.getPropertyValue('--dissolve'))||0;
+ if(p<=0||p>=1||reduce)return;
+ const x=0,y=0,w=dissolveW,h=dissolveH;
+ const front=p*1.18-.09;
+ dissolveCtx.save();dissolveCtx.globalCompositeOperation='lighter';
+ for(const q of waveParticles){
+  const wobble=Math.sin(q.v*19+p*9)*.015+Math.sin(q.v*41+p*7)*.008;
+  const distance=front-(q.u+wobble);
+  if(distance<-.065||distance>.22)continue;
+  const life=Math.max(0,1-Math.abs(distance-.038)/.19);
+  const drift=Math.max(0,distance)*Math.min(130,w*.11)*(.25+q.seed);
+  const px=x+q.u*w-drift;
+  const py=y+q.v*h+Math.sin(q.seed*40+p*12)*distance*85;
+  const sz=q.size*(.7+life*.7);
+  dissolveCtx.globalAlpha=life*(.4+q.seed*.55);
+  dissolveCtx.fillStyle=q.seed>.87?'#c8faff':q.seed>.52?'#31d8ff':'#086bf4';
+  if(q.seed>.35){
+   dissolveCtx.font=`${Math.round(9+q.seed*6)}px monospace`;
+   dissolveCtx.fillText(q.seed>.66?'1':'0',px,py);
+  }else{
+   dissolveCtx.fillRect(px,py,sz,sz*(.7+q.seed));
+  }
+  if(q.seed>.93){dissolveCtx.fillStyle='#7df1ff';dissolveCtx.fillRect(px-3,py,sz*4,.8)}
+ }
+ dissolveCtx.restore();
+}
+function animateDissolve(){drawBlueDissolve();requestAnimationFrame(animateDissolve)}
+requestAnimationFrame(animateDissolve);
+
+// Animated binary atmosphere, intentionally distinct from the reference website.
+const canvas=document.getElementById('binary'),ctx=canvas.getContext('2d');let cols=[],cw=0,ch=0,dpr=1;function resize(){const r=canvas.getBoundingClientRect();cw=r.width;ch=r.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=cw*dpr;canvas.height=ch*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);cols=Array.from({length:Math.ceil(cw/19)},(_,i)=>({x:i*19+Math.random()*12,y:Math.random()*ch,speed:.12+Math.random()*.36,len:4+Math.random()*19,phase:Math.random()*6.28,hue:[185,196,275,160][i%4]}))}resize();addEventListener('resize',resize,{passive:true});let lastFrame=0;function drawBinary(t){if(t-lastFrame>35){lastFrame=t;ctx.clearRect(0,0,cw,ch);ctx.font='10px monospace';cols.forEach(c=>{for(let j=0;j<c.len;j++){const y=(c.y+j*14)%ch,alpha=(.1+.19*Math.sin(t*.0007+c.phase+j*.12))*(1-j/c.len);ctx.fillStyle=`hsla(${c.hue},76%,36%,${Math.max(0,alpha*1.75)})`;ctx.fillText((Math.sin(j*43+c.phase+t*.0002)>0?'1':'0'),c.x,y)}if(!reduce)c.y=(c.y+c.speed)%ch})}} /* global binary replaces hero-only binary */
+// Pinned scrolling without third-party dependencies.
+const archive=document.getElementById('work'),folders=[...document.querySelectorAll('.folder')],archiveBar=document.getElementById('archiveBar'),archiveIndex=document.getElementById('archiveIndex'),story=document.getElementById('story'),strip=document.getElementById('storyStrip'),viewport=document.querySelector('.story-viewport');function clamp(v){return Math.min(1,Math.max(0,v))}function updateScroll(){heroScroll();if(matchMedia('(max-width: 767px)').matches){
+ folders.forEach((f,i)=>{
+  f.style.removeProperty('--lift');
+  f.style.setProperty('--active','1');
+  f.style.setProperty('--preview-opacity','1');
+  if(i<=1)f.style.setProperty('--paw-clarity','1');
+  f.classList.add('file-open');
+  f.style.zIndex=String(4-i);
+  const btn=f.querySelector('button[data-project]');
+  if(btn){btn.disabled=false;btn.tabIndex=0;btn.setAttribute('aria-hidden','false')}
+ });
+ archiveIndex.textContent='04 / 04';archiveBar.style.width='100%';
+ strip.style.transform='none';return;
+}const ar=archive.getBoundingClientRect(),ap=clamp(-ar.top/Math.max(1,ar.height-innerHeight));folders.forEach((f,i)=>{const p=clamp((ap*4-i)*1.2);const lift=p*(f.clientHeight*.25);f.style.setProperty('--lift',-lift+'px');f.style.setProperty('--active',p);if(i<=1)f.style.setProperty('--paw-clarity',(p*p*(3-2*p)).toFixed(4));const fullyRaised=p>=0.999;f.classList.toggle('file-open',fullyRaised);f.style.zIndex=fullyRaised?String(30+i):String(i+1);const explore=f.querySelector('button[data-project]');if(explore){explore.disabled=!fullyRaised;explore.tabIndex=fullyRaised?0:-1;explore.setAttribute('aria-hidden',String(!fullyRaised));}f.style.setProperty('--preview-opacity',(i===0 ? (.72+p*.28) : (.12+p*.72)).toFixed(3));f.style.boxShadow=p>.1?'-20px 28px 45px #000b,0 0 24px #22c7f21a':'-18px 24px 30px #0007';});archiveIndex.textContent=String(Math.min(4,Math.floor(ap*4)+1)).padStart(2,'0')+' / 04';archiveBar.style.width=(ap*100)+'%';const sr=story.getBoundingClientRect(),sp=clamp(-sr.top/Math.max(1,sr.height-innerHeight));const travel=Math.max(0,strip.scrollWidth-viewport.clientWidth+innerWidth*.05);strip.style.transform=`translate3d(${-sp*travel}px,0,0)`}let ticking=false;addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{updateScroll();ticking=false});ticking=true}},{passive:true});addEventListener('resize',updateScroll);updateScroll();document.querySelectorAll('[data-project]').forEach(b=>b.addEventListener('click',()=>{if(b.disabled)return;if(b.dataset.project==='Paw & Solve'){window.location.href='work/paw-and-solve.html';}else if(b.dataset.project==='Case Study 02'){window.location.href='work/project-02.html';}else{alert(b.dataset.project+' — Case study page will be connected when the content is ready.');}}));
+})();
+</script>
+<script>
+(()=>{'use strict';
+// V3 global ambient binary, unchanged in density and coverage.
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const binary=document.getElementById('globalBinary'),b=binary.getContext('2d');
+let w=0,h=0,dpr=1,streams=[],lastBinary=0;
+const sections=[...document.querySelectorAll('.hero-track,.archive-track,.story-track,.contact,.footer')];
+function resize(){w=innerWidth;h=innerHeight;dpr=Math.min(devicePixelRatio||1,2);binary.width=Math.round(w*dpr);binary.height=Math.round(h*dpr);b.setTransform(dpr,0,0,dpr,0,0);streams=Array.from({length:Math.ceil(w/(19/1.05))},(_,i)=>({x:i*(19/1.05)+Math.random()*8,y:Math.random()*h,v:.22+Math.random()*.46,len:5+Math.random()*17,phase:Math.random()*6.28,hue:[185,196,275,160][i%4]}))}
+resize();addEventListener('resize',resize,{passive:true});
+function darkAt(y){for(const section of sections){const r=section.getBoundingClientRect();if(y>=r.top&&y<r.bottom)return section.classList.contains('archive-track')||section.classList.contains('footer')}return false}
+function render(t){if(t-lastBinary>35){lastBinary=t;b.clearRect(0,0,w,h);b.font='10px monospace';for(const c of streams){for(let j=0;j<c.len;j++){const y=(c.y+j*14)%h,fade=(1-j/c.len),dark=darkAt(y),a=(.08+.17*(.5+.5*Math.sin(t*.001+c.phase+j*.16)))*fade;b.fillStyle=`hsla(${c.hue},${dark?85:70}%,${dark?66:35}%,${a*(dark?1.2:1.55)})`;b.fillText(Math.sin(j*43+c.phase+t*.0002)>0?'1':'0',c.x,y)}if(!reduce)c.y=(c.y+c.v)%h}}requestAnimationFrame(render)}requestAnimationFrame(render);
+})();
+</script>
+<script>
+/* V4.0 — display-density antialiased mask over the unchanged V3.8 fluid field. The field is ONLY an alpha mask;
+   the underlying android and machine scene remain real, aligned layers. */
+(()=>{'use strict';
+const hero=document.getElementById('hero'),out=document.getElementById('inkCanvas');
+const ctx=out.getContext('2d',{alpha:true});
+const robot=document.querySelector('#revealRobotStage img');
+const gazeTextures=[new Image(),new Image()];
+gazeTextures[0].src='assets/robot-pupil-v94-1.png';
+gazeTextures[1].src='assets/robot-pupil-v94-2.png';
+
+const mover=document.getElementById('portraitMover');
+const heroHeadlines=[document.querySelector('.hero-title:not(.reveal-type)'),document.querySelector('.machine-title:not(.reveal-type)')];
+if(!ctx||!robot||!mover)return;
+// Paint exact same headline content in white onto the *underlying* scene,
+// then apply the SAME fluid alpha mask to the entire scene. No separate cursor hover mask.
+function paintRevealedHeadlines(heroRect){
+ sc.save();sc.fillStyle='#e8f2f9';sc.textBaseline='alphabetic';
+ for(const heading of heroHeadlines){
+  if(!heading)continue;
+  const style=getComputedStyle(heading);
+  const opacity=heading.classList.contains('machine-title')?parseFloat(style.opacity):1;
+  if(opacity<=.005)continue;
+  sc.globalAlpha=opacity;
+  sc.font=`${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+  if('letterSpacing' in sc)sc.letterSpacing=style.letterSpacing;
+  sc.textAlign=style.textAlign==='right'?'right':'left';
+  for(const span of heading.querySelectorAll('span')){
+   const box=span.getBoundingClientRect();
+   const size=parseFloat(style.fontSize);
+   // Use each live DOM line's position so responsive layouts stay aligned.
+   const x=style.textAlign==='right'?box.right-heroRect.left:box.left-heroRect.left;
+   const y=box.top-heroRect.top+size*.78;
+   sc.fillText(span.textContent.trim(),x,y);
+  }
+ }
+ sc.restore();
+}
+
+const field=document.createElement('canvas'),fc=field.getContext('2d',{willReadFrequently:true});
+const scene=document.createElement('canvas'),sc=scene.getContext('2d');
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W=0,H=0,NX=0,NY=0,N=0,den,velX,velY,nextD,nextX,nextY,pixels;
+let maskW=0,maskH=0,maskPixels,maskSampleX,maskSampleY,maskDpr=1;
+let last=performance.now(),lastRendered=0,inside=false,previous=null,queued=[],visible=true;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function resize(){
+ const r=hero.getBoundingClientRect();W=r.width;H=r.height;
+ const dpr=Math.min(devicePixelRatio||1,1.5);
+ out.width=Math.round(W*dpr);out.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+ scene.width=out.width;scene.height=out.height;sc.setTransform(dpr,0,0,dpr,0,0);
+
+ // Simulation grid: high enough for curved silhouettes, small enough for laptops.
+ NX=Math.max(100,Math.min(370,Math.round(W/3.5)));
+ NY=Math.max(75,Math.min(240,Math.round(H/3.5)));
+ N=NX*NY;field.width=NX;field.height=NY;
+ den=new Float32Array(N);velX=new Float32Array(N);velY=new Float32Array(N);
+ nextD=new Float32Array(N);nextX=new Float32Array(N);nextY=new Float32Array(N);
+ // Render the alpha mask at actual output pixel density. Fluid grid remains unchanged.
+ // Direct pixel sampling avoids a second low-resolution canvas enlargement.
+ maskDpr=dpr;
+ maskW=out.width;maskH=out.height;
+ field.width=maskW;field.height=maskH;
+ maskPixels=fc.createImageData(maskW,maskH);
+ maskSampleX=new Float32Array(maskW);maskSampleY=new Float32Array(maskH);
+ for(let x=0;x<maskW;x++)maskSampleX[x]=(x+.5)*NX/maskW-.5;
+ for(let y=0;y<maskH;y++)maskSampleY[y]=(y+.5)*NY/maskH-.5;
+ queued=[];previous=null;
+}
+resize();addEventListener('resize',resize,{passive:true});
+function sample(arr,x,y){
+ x=clamp(x,0,NX-1.001);y=clamp(y,0,NY-1.001);
+ const ix=x|0,iy=y|0,fx=x-ix,fy=y-iy,i=iy*NX+ix;
+ return (arr[i]*(1-fx)+arr[i+1]*fx)*(1-fy)+(arr[i+NX]*(1-fx)+arr[i+NX+1]*fx)*fy;
+}
+function inject(x,y,dx,dy,force){
+ const gx=x/W*NX,gy=y/H*NY;
+ const speed=Math.hypot(dx,dy),ux=dx/(speed||1),uy=dy/(speed||1);
+ const radius=.70*(27+Math.min(23,speed*.28))*NX/W;
+ const extent=Math.ceil(radius*2.8),cx=Math.round(gx),cy=Math.round(gy);
+ for(let j=Math.max(1,cy-extent);j<Math.min(NY-1,cy+extent);j++){
+  for(let i=Math.max(1,cx-extent);i<Math.min(NX-1,cx+extent);i++){
+   const rx=i-gx,ry=j-gy,rr=(rx*rx+ry*ry)/(radius*radius);
+   if(rr>7.5)continue;
+   const core=Math.exp(-rr*.86),edge=Math.exp(-rr*.34);
+   const k=j*NX+i;
+   den[k]=Math.min(2.4,den[k]+core*.54*force);
+   // Push fluid sideways, creating curling wakes rather than a painted line.
+   const spin=(rx*uy-ry*ux)>=0?1:-1;
+   velX[k]+=((ux*.30)+(-ry/(radius+1))*.32*spin)*edge*force;
+   velY[k]+=((uy*.30)+(rx/(radius+1))*.32*spin)*edge*force;
+  }
+ }
+}
+function pointer(e){if(reduce||e.pointerType==='touch')return;
+ const r=hero.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,t=performance.now();
+ if(x<0||y<0||x>W||y>H)return;
+ if(!previous||t-previous.t>140||Math.hypot(x-previous.x,y-previous.y)>280){
+  queued.push([x,y,0,0,.8]);
+ }else{
+  const dx=x-previous.x,dy=y-previous.y,dist=Math.hypot(dx,dy);
+  const steps=Math.max(1,Math.min(35,Math.ceil(dist/15)));
+  for(let i=1;i<=steps;i++)queued.push([previous.x+dx*i/steps,previous.y+dy*i/steps,dx/steps,dy/steps,1]);
+ }
+ previous={x,y,t};inside=true;
+}
+hero.addEventListener('pointermove',pointer,{passive:true});
+hero.addEventListener('pointerdown',pointer,{passive:true});
+hero.addEventListener('pointerleave',()=>{previous=null;inside=false});
+addEventListener('blur',()=>{previous=null;queued=[]});
+function simulate(dt,t){
+ // Avoid joining disconnected cursor paths. Inject only sampled local moves.
+ for(const q of queued)inject(...q);queued=[];
+ const frame=clamp(dt/16.67,.45,2.2),decay=Math.pow(.963,frame),drag=Math.pow(.955,frame);
+ for(let y=1;y<NY-1;y++)for(let x=1;x<NX-1;x++){
+  const k=y*NX+x;
+  // Smooth, low-frequency vortices transport the pigment after the cursor leaves.
+  const flowX=(Math.sin(y*.049+t*.00041)+Math.cos((x+y)*.034-t*.00029))*.19;
+  const flowY=(Math.cos(x*.053-t*.00037)-Math.sin((x-y)*.029+t*.00032))*.19;
+  const vx=velX[k]+flowX,vy=velY[k]+flowY;
+  const sx=x-vx*frame,sy=y-vy*frame;
+  nextD[k]=sample(den,sx,sy)*decay;
+  // A little diffusion, without blurring the final reveal edge.
+  nextD[k]=nextD[k]*.986+(den[k-1]+den[k+1]+den[k-NX]+den[k+NX])*.0035;
+  nextX[k]=sample(velX,sx,sy)*drag;
+  nextY[k]=sample(velY,sx,sy)*drag;
+ }
+ [den,nextD]=[nextD,den];[velX,nextX]=[nextX,velX];[velY,nextY]=[nextY,velY];
+ // Prevent recycled border data from causing stray lines.
+ for(let x=0;x<NX;x++){den[x]=0;den[(NY-1)*NX+x]=0;velX[x]=velY[x]=0}
+ for(let y=0;y<NY;y++){const a=y*NX,b=a+NX-1;den[a]=den[b]=0;velX[a]=velY[a]=velX[b]=velY[b]=0}
+}
+function makeMask(){
+ // Bilinear interpolation of the actual fluid density BEFORE applying the ink
+ // threshold. Thresholding the small simulation grid first caused the stairs.
+ const data=maskPixels.data, low=.146, high=.190;
+ let active=false;
+ for(let y=0;y<maskH;y++){
+  const gy=clamp(maskSampleY[y],0,NY-1.001), iy=gy|0, fy=gy-iy;
+  const row=iy*NX, row2=(iy+1)*NX;
+  for(let x=0;x<maskW;x++){
+   const gx=clamp(maskSampleX[x],0,NX-1.001), ix=gx|0, fx=gx-ix;
+   const a=den[row+ix],b=den[row+ix+1],c=den[row2+ix],e=den[row2+ix+1];
+   const v=(a+(b-a)*fx)*(1-fy)+(c+(e-c)*fx)*fy;
+   const u=clamp((v-low)/(high-low),0,1);
+   const alpha=u*u*(3-2*u),j=(y*maskW+x)*4;
+   data[j]=data[j+1]=data[j+2]=255;
+   data[j+3]=Math.round(alpha*255);
+   if(alpha>.01)active=true;
+  }
+ }
+ if(active)fc.putImageData(maskPixels,0,0);
+ return active;
+}
+function draw(t){
+ if(t-lastRendered<30){requestAnimationFrame(draw);return;}
+ lastRendered=t;const dt=Math.min(42,t-last);last=t;
+ if(!reduce&&visible){simulate(dt,t);ctx.clearRect(0,0,W,H);
+  if(makeMask()&&robot.complete&&robot.naturalWidth){
+
+   sc.clearRect(0,0,W,H);sc.fillStyle='#111820';sc.fillRect(0,0,W,H);
+   const hr=hero.getBoundingClientRect(),st=mover.getBoundingClientRect();
+   paintRevealedHeadlines(hr);
+   const aspect=robot.naturalWidth/robot.naturalHeight;
+   const rw=Math.min(st.width,st.height*aspect),rh=rw/aspect;
+   sc.drawImage(robot,st.left-hr.left+(st.width-rw)/2,st.top-hr.top+st.height-rh,rw,rh);
+   // Draw moving photographic iris details INTO the reveal scene, before the
+   // fluid alpha mask. They can never leak into the human side of the hero.
+   const imageX=st.left-hr.left+(st.width-rw)/2,imageY=st.top-hr.top+st.height-rh;
+   const sx=rw/1278,sy=rh/1230;
+   const look=window.__robotGaze||[{x:0,y:0},{x:0,y:0}];
+   [[539,441],[722,441]].forEach(([px,py],i)=>{
+    const tex=gazeTextures[i];if(!tex.complete||!tex.naturalWidth)return;
+    const sz=32*sx;
+    sc.drawImage(tex,imageX+(px-16)*sx+(look[i]?.x||0)*sx,
+      imageY+(py-16)*sy+(look[i]?.y||0)*sy,sz,32*sy);
+   });
+
+   sc.globalCompositeOperation='destination-in';sc.drawImage(field,0,0,W,H);
+   sc.globalCompositeOperation='source-over';ctx.drawImage(scene,0,0,W,H);
+  }
+ }
+ requestAnimationFrame(draw);
+}
+new IntersectionObserver(entries=>{visible=entries[0].isIntersecting},{threshold:0}).observe(hero);
+requestAnimationFrame(draw);
+})();
+</script>
+
+<script>
+/* V5.2 — visual cursor only; existing fluid reveal receives all original pointer events. */
+(()=>{
+ const fine=matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
+ if(!fine.matches)return;
+ const el=document.getElementById('precisionCursor');
+ document.documentElement.classList.add('has-custom-cursor');
+ let x=-100,y=-100,tx=-100,ty=-100,visible=false;
+ document.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'&&e.pointerType!=='pen')return;tx=e.clientX;ty=e.clientY;if(!visible){x=tx;y=ty;visible=true}el.classList.add('is-visible');el.classList.toggle('is-action',!!e.target.closest('a,button,[role="button"]'));},{passive:true});
+ document.addEventListener('pointerdown',()=>el.classList.add('is-pressed'),{passive:true});
+ document.addEventListener('pointerup',()=>el.classList.remove('is-pressed'),{passive:true});
+ document.addEventListener('pointercancel',()=>el.classList.remove('is-pressed'),{passive:true});
+ document.addEventListener('mouseout',e=>{if(!e.relatedTarget){el.classList.remove('is-visible');visible=false}},{passive:true});
+ window.addEventListener('blur',()=>{el.classList.remove('is-visible');visible=false});
+ function frame(){x+=(tx-x)*.34;y+=(ty-y)*.34;el.style.transform=`translate3d(${x}px,${y}px,0) translate(-50%,-50%)`;requestAnimationFrame(frame)}
+ requestAnimationFrame(frame);
+})();
+</script>
+
+<script>
+/* V9.4: restrained photographic pupil motion; consistent with canvas reveal. */
+(()=>{
+ const stage=document.getElementById('portraitMover');
+ const layer=stage?.querySelector('.robot-eyes-main');if(!stage||!layer)return;
+ const W=1278,H=1230,eyes=[[539,441],[722,441]];
+ let pointer=null,last=0;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const gaze=[{x:0,y:0},{x:0,y:0}];window.__robotGaze=gaze;
+ document.addEventListener('pointermove',e=>{if(e.pointerType!=='touch')pointer={x:e.clientX,y:e.clientY}},{passive:true});
+ document.addEventListener('pointerleave',()=>{pointer=null},{passive:true});
+ function frame(t){
+  requestAnimationFrame(frame);if(t-last<16)return;last=t;
+  const rect=stage.getBoundingClientRect();if(!rect.width||!rect.height)return;
+  const scale=Math.min(rect.width/W,rect.height/H);
+  const dw=W*scale,dh=H*scale,left=(rect.width-dw)/2,top=rect.height-dh;
+  layer.style.setProperty('--iris-size',32*scale+'px');
+  layer.querySelectorAll('.robot-eye').forEach((node,i)=>{
+   const px=left+eyes[i][0]*scale,py=top+eyes[i][1]*scale;
+   node.style.left=px+'px';node.style.top=py+'px';
+   const dx=pointer?pointer.x-(rect.left+px):0;
+   const dy=pointer?pointer.y-(rect.top+py):0;
+   const distance=Math.hypot(dx,dy);
+   // Small movement (max 4 source pixels) avoids stickers and edge blur.
+   const travel=Math.min(4,distance/135);
+   const targetX=distance?dx/distance*travel:0;
+   const targetY=distance?dy/distance*travel:0;
+   gaze[i].x+=(targetX-gaze[i].x)*(reduced?1:.15);
+   gaze[i].y+=(targetY-gaze[i].y)*(reduced?1:.15);
+   const iris=node.querySelector('.robot-iris');
+   iris.style.setProperty('--look-x',(gaze[i].x*scale).toFixed(2)+'px');
+   iris.style.setProperty('--look-y',(gaze[i].y*scale).toFixed(2)+'px');
+  });
+ }
+ requestAnimationFrame(frame);
+})();
+</script>
+</body></html>
